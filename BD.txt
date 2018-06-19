@@ -1,0 +1,105 @@
+drop database if exists BD;
+create database BD;
+use BD;
+
+create table Tipo(
+	cod_tipo int auto_increment,
+	designacao varchar(10),
+	unique (designacao),
+	primary key(cod_tipo)
+)engine=InnoDB;
+
+create table Utilizador(
+	cod_utilizador int auto_increment,
+	nome_utilizador varchar(20),
+	password varchar(20),
+	cod_tipo int,
+	unique (nome_utilizador),
+	primary key(cod_utilizador),
+	foreign key(cod_tipo) 
+			references Tipo(cod_tipo)
+			on update cascade
+			on delete cascade
+)engine=InnoDB;
+
+create table Edificio(
+	cod_edificio int auto_increment,
+	cod_utilizador int not null,
+	designacao varchar(20),
+	preco decimal(4,3),
+	primary key(cod_edificio),
+	foreign key(cod_utilizador) 
+			references Utilizador(cod_utilizador)
+			on update cascade
+			on delete cascade
+)engine=InnoDB;
+
+create table Consumo(
+	cod_consumo int auto_increment,
+	cod_edificio int,
+	valor decimal(8,7),
+	timestamp_date date ,
+	timestamp_time time,
+	primary key(cod_consumo),
+	foreign key(cod_edificio) 
+			references Edificio(cod_edificio)
+			on update cascade
+			on delete cascade
+)engine=InnoDB;
+
+
+insert into Tipo
+	values 	(null, 'Cliente'),
+			(null, 'Gestor');
+			
+insert into Utilizador
+	values	(null, "Diana", "123", 2),
+			(null, "Claudia", "123",1),
+			(null, "Andreia", "123",1),
+			(null, "Diogo", "123",1),
+			(null, "Joao", "123", 1);	
+		
+insert into Edificio
+	values	(null, 2, "casa Ferias",0.016),
+			(null, 3, "Espinho", 0.015),
+			(null, 1, "casa Franca", 0.014),
+			(null, 2, "aluguer Braga", 0.013),
+			(null, 3, "casa pais", 0.012),
+			(null, 1, "aluguer Torres", 0.011);
+			
+insert into Consumo
+	values	(null, 1, 0.00001, '2018-06-08',' 00:10:00'),
+			(null, 1, 0.00002, '2018-06-08',' 00:11:10'),
+			(null, 1, 0.00003, '2018-06-08',' 00:15:20'),
+			(null, 1, 0.00005, '2018-06-08',' 00:20:30'),
+			(null, 1, 0.00005, '2018-06-08',' 00:30:40'),
+			(null, 1, 0.00006, '2018-06-08',' 01:10:00'),
+			(null, 1, 0.00006, '2018-06-08',' 01:13:10'),
+			(null, 1, 0.00007, '2018-06-08',' 01:13:40'),
+			(null, 1, 0.00009, '2018-06-08',' 01:14:30'),
+			(null, 1, 0.00009, '2018-06-08',' 01:30:10'),
+			(null, 1, 0.0001, '2018-06-08 ','01:30:40'),
+			(null, 1, 0.00011, '2018-06-08',' 01:40:30'),
+			(null, 1, 0.00011, '2018-06-08',' 01:40:40'),
+			(null, 1,0.00012, '2018-06-08',' 01:44:00'),
+			(null, 1, 0.00012, '2018-06-08',' 02:10:10'),
+			(null, 1, 0.00012, '2018-06-08',' 02:20:00'),
+			(null, 1, 0.00013, '2018-06-08',' 02:25:20'),
+			(null, 1, 0.00014, '2018-06-08',' 02:30:10'),
+			(null, 1, 0.00015, '2018-06-08 ','02:39:00'),
+			(null, 1, 0.00023, '2018-06-08',' 02:44:30'),
+			(null, 1, 0.0003, '2018-06-08 ','02:10:10'),
+			(null, 1, 0.00036, '2018-06-08',' 02:15:40'),
+			(null, 1, 0.00036, '2018-06-08 ','02:35:20'),
+			(null, 1, 0.00036, '2018-06-08',' 02:36:10'),
+			(null, 1, 0.00036, '2018-06-08',' 10:14:40'),
+			(null, 1, 0.00036, '2018-06-08',' 10:25:00'),
+			(null, 1, 0.00036, '2018-06-08',' 10:37:10'),
+			(null, 1, 0.00036, '2018-06-08',' 10:46:30'),
+			(null, 1, 0.0004, '2018-06-08 ','10:48:00'),
+			(null, 1, 0.000526, '2018-06-08 ','10:50:10'),
+			(null, 1, 0.000526, '2018-06-08',' 10:59:00'),
+			(null, 1, 0.000527, '2018-06-08',' 23:10:40'),
+			(null, 1, 0.000529, '2018-06-08',' 23:15:59'),
+			(null, 1, 0.000529, '2018-06-08',' 23:19:50'),
+			(null, 1, 0.00053, '2018-06-08 ','23:19:59');
