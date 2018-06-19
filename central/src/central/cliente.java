@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
+import javax.swing.table.DefaultTableModel;
 
 public class cliente extends javax.swing.JFrame {
 
@@ -48,15 +49,22 @@ public class cliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        lista_Edif = new javax.swing.JComboBox<>();
-        Botao_Consultar = new javax.swing.JButton();
         ScrollOutput = new javax.swing.JScrollPane();
         ScrollOutput = new javax.swing.JScrollPane();
         Output = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
+        lista_Edif = new javax.swing.JComboBox<>();
+        Botao_Consultar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabela = new javax.swing.JTable();
         Botao_AlterarPreco = new javax.swing.JButton();
         logout = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+
+        Output.setEditable(false);
+        Output.setBackground(new java.awt.Color(239, 239, 239));
+        Output.setMinimumSize(new java.awt.Dimension(1, 22));
+        ScrollOutput.setViewportView(Output);
 
         getContentPane().setLayout(null);
 
@@ -89,13 +97,18 @@ public class cliente extends javax.swing.JFrame {
         jPanel1.add(Botao_Consultar);
         Botao_Consultar.setBounds(280, 50, 130, 30);
 
-        Output.setEditable(false);
-        Output.setBackground(new java.awt.Color(239, 239, 239));
-        Output.setMinimumSize(new java.awt.Dimension(1, 22));
-        ScrollOutput.setViewportView(Output);
+        tabela.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jPanel1.add(ScrollOutput);
-        ScrollOutput.setBounds(20, 100, 390, 190);
+            },
+            new String [] {
+                "Consumo (kWh)", "Dia", "Hora"
+            }
+        ));
+        jScrollPane1.setViewportView(tabela);
+
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(20, 90, 390, 200);
 
         Botao_AlterarPreco.setBackground(new java.awt.Color(204, 204, 204));
         Botao_AlterarPreco.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -150,6 +163,7 @@ public class cliente extends javax.swing.JFrame {
 
         try {
             Imprimir_Output();
+            
         } catch (SQLException | ParseException ex) {
             Logger.getLogger(cliente.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -206,6 +220,7 @@ public class cliente extends javax.swing.JFrame {
                 ini = new inicial();
                 ini.setSize(400, 300);
                 ini.setTitle("Sistema Central de Gestão");
+                ini.setLocationRelativeTo(null);
                 ini.setVisible(true);
             } catch (IOException | ClassNotFoundException | SQLException | ParseException ex) {
                 Logger.getLogger(gestor.class.getName()).log(Level.SEVERE, null, ex);
@@ -218,28 +233,41 @@ public class cliente extends javax.swing.JFrame {
         DataBase t = new DataBase();
         String s = (String) lista_Edif.getSelectedItem();
         Output.setText(null);
+        
+       
+        DefaultTableModel val= (DefaultTableModel) tabela.getModel();
+        val.setRowCount(0);
+        
         /*consultar c;
         c = new consultar(con);
         c.setSize(485, 385);
         c.setTitle("Sistema Central de Gestão: " + (String) lista_Edif.getSelectedItem());
         c.setVisible(true);*/
+        
+        
         if (s != null) {
             double preco = t.output_cliente_preco(con, s);
             if (preco != 0) {
-                Output.append("Edificio : " + s);
+               // Output.append("Edificio : " + s);
                 Output.append("\nPreço : " + preco);
-                Output.append("\nConsumo (kWh) : \tDia:\t Hora:\n");
+                //Output.append("\nConsumo (kWh) : \tDia:\t Hora:\n");
                 ResultSet resultset = t.output_cliente(con, s);
 
                 //System.out.println(resultset);
-                while (resultset.next()) {
-                    Output.append(Double.toString(resultset.getDouble("valor")) + "\t\t");
+                while (resultset.next()){
+                    //Output.append(Double.toString(resultset.getDouble("valor")) + "\t\t");
                     //System.out.println(Double.toString(resultset.getDouble("valor")));
-                    Output.append(String.valueOf(resultset.getDate("timestamp_date")) + "\t");
-                    Output.append(String.valueOf(resultset.getTime("timestamp_time")) + "\n");
+                    //Output.append(String.valueOf(resultset.getDate("timestamp_date")) + "\t");
+                    //Output.append(String.valueOf(resultset.getTime("timestamp_time")) + "\n");
+                    val.addRow(new String[] {Double.toString(resultset.getDouble("valor")),String.valueOf(resultset.getDate("timestamp_date")),String.valueOf(resultset.getTime("timestamp_time"))});
+                    
+                    
+                    
                 }
             } else {
-                Output.append("Edifício " + s + " sem dados.");
+                JOptionPane.showMessageDialog(null, "Edifício " + s + " sem dados.", "Sistema Central de Gestão", JOptionPane.PLAIN_MESSAGE);
+                //Output.append("Edifício " + s + " sem dados.");
+                                
             }
         }
 
@@ -251,8 +279,10 @@ public class cliente extends javax.swing.JFrame {
     private javax.swing.JScrollPane ScrollOutput;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> lista_Edif;
     private javax.swing.JLabel logout;
+    private javax.swing.JTable tabela;
     // End of variables declaration//GEN-END:variables
 
 }

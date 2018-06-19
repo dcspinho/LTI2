@@ -45,7 +45,6 @@ public class gerir extends javax.swing.JFrame {
         Botao_eliminar_edif = new javax.swing.JLabel();
         Edif_novo = new javax.swing.JButton();
         lista_Edif = new javax.swing.JComboBox<>();
-        jToggleButton1 = new javax.swing.JToggleButton();
         jLabel3 = new javax.swing.JLabel();
 
         jPanel1.setMaximumSize(new java.awt.Dimension(500, 400));
@@ -95,15 +94,6 @@ public class gerir extends javax.swing.JFrame {
         });
         jPanel1.add(lista_Edif);
         lista_Edif.setBounds(40, 90, 150, 30);
-
-        jToggleButton1.setText("LOGOUT");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jToggleButton1);
-        jToggleButton1.setBounds(250, 30, 73, 40);
 
         jLabel3.setForeground(new java.awt.Color(169, 229, 243));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -201,10 +191,6 @@ public class gerir extends javax.swing.JFrame {
         //System.out.println("Não existe");
         return false;
     }
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
     private void Botao_eliminar_edifMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_eliminar_edifMouseReleased
         DataBase t = new DataBase();
         /*try {         //ver apenas se estava a guardar bem na BD
@@ -258,7 +244,6 @@ public class gerir extends javax.swing.JFrame {
     private javax.swing.JButton Edif_novo;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JComboBox<String> lista_Edif;
     private javax.swing.JTextField nome;
     private javax.swing.JLabel user;

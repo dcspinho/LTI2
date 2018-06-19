@@ -91,25 +91,15 @@ public class server {
                             System.out.println("preco_edificio = "+prec);
                                 
                             
-                            //ver se ele ta na base de dados
-                            
-                            //double prec=......;
-                            
-                            //double prec=0;
                  
                             
                             if(prec!=0){
                                 out.println(prec);
-                                //System.out.println("tem preco");
                             }
                             else{
                                 out.println("");
-                                //System.out.println("nao tem preco");
                                 current="";
                             }
-
-                            
-                            //out.println("Conectados!");
                                                         
                         }
                         else{
@@ -118,7 +108,6 @@ public class server {
 
                     }
 
-                    //System.out.println("aquii");
                     in.close();
                     out.close();
                     cs.close();

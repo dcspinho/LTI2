@@ -52,6 +52,7 @@ public class inicial extends javax.swing.JFrame {
                     ini = new inicial();
                     ini.setSize(400, 300);
                     ini.setTitle("Sistema Central de Gestão");
+                    ini.setLocationRelativeTo(null);
                     ini.setVisible(true);
 
                 } catch (IOException | ClassNotFoundException | SQLException | ParseException ex) {
@@ -219,12 +220,13 @@ public class inicial extends javax.swing.JFrame {
                                 setVisible(false);
                                 m.setSize(445, 350);
                                 m.setTitle("Sistema Central de Gestão: " + user);
+                                m.setLocationRelativeTo(null);
                                 m.setVisible(true);
                             } else if (todos_tipo.get(x) == 2) {   //gestor
                                 gestor m = new gestor(con, Utilizador.getText());
                                 setVisible(false);
                                 m.setSize(380, 250);
-                                //m.setSize(485, 385);
+                                m.setLocationRelativeTo(null);
                                 m.setTitle("Sistema Central de Gestão");
                                 m.setVisible(true);
                             }
