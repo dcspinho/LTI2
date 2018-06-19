@@ -62,6 +62,11 @@ public class gerir extends javax.swing.JFrame {
         nome.setText("NOME");
         nome.setCaretColor(new java.awt.Color(204, 204, 204));
         nome.setSelectionColor(new java.awt.Color(0, 0, 0));
+        nome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomeActionPerformed(evt);
+            }
+        });
         jPanel1.add(nome);
         nome.setBounds(110, 30, 140, 30);
 
@@ -225,6 +230,10 @@ public class gerir extends javax.swing.JFrame {
         //lista_Edif = t.pesquisar_edificio_user(con, nome.getText());
 
     }//GEN-LAST:event_lista_EdifActionPerformed
+
+    private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomeActionPerformed
 
     public void Atualizar_edif(DataBase t, Connection con) throws SQLException {
         try {

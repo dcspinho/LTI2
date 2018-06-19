@@ -1,8 +1,6 @@
 package central;
 
-import static central.inicial.con;
-import com.sun.glass.events.KeyEvent;
-import java.awt.List;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -55,6 +53,8 @@ public class cliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lista_Edif = new javax.swing.JComboBox<>();
         Botao_Consultar = new javax.swing.JButton();
+        prec = new javax.swing.JTextField();
+        prec_txt = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabela = new javax.swing.JTable();
         Botao_AlterarPreco = new javax.swing.JButton();
@@ -78,12 +78,14 @@ public class cliente extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lista_Edif);
-        lista_Edif.setBounds(150, 50, 130, 30);
+        lista_Edif.setBounds(230, 50, 130, 30);
 
         Botao_Consultar.setBackground(new java.awt.Color(204, 204, 204));
         Botao_Consultar.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        Botao_Consultar.setText("Consultar");
+        Botao_Consultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/cons.png"))); // NOI18N
         Botao_Consultar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Botao_Consultar.setPreferredSize(new java.awt.Dimension(45, 35));
+        Botao_Consultar.setRequestFocusEnabled(false);
         Botao_Consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botao_ConsultarActionPerformed(evt);
@@ -95,7 +97,26 @@ public class cliente extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Botao_Consultar);
-        Botao_Consultar.setBounds(280, 50, 130, 30);
+        Botao_Consultar.setBounds(370, 45, 40, 40);
+
+        prec.setEditable(false);
+        prec.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        prec.setCaretColor(new java.awt.Color(204, 204, 204));
+        prec.setSelectionColor(new java.awt.Color(0, 0, 0));
+        prec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                precActionPerformed(evt);
+            }
+        });
+        jPanel1.add(prec);
+        prec.setBounds(60, 50, 60, 30);
+
+        prec_txt.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        prec_txt.setForeground(new java.awt.Color(255, 255, 255));
+        prec_txt.setText("Preço");
+        prec_txt.setToolTipText("");
+        jPanel1.add(prec_txt);
+        prec_txt.setBounds(20, 50, 40, 30);
 
         tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -112,8 +133,9 @@ public class cliente extends javax.swing.JFrame {
 
         Botao_AlterarPreco.setBackground(new java.awt.Color(204, 204, 204));
         Botao_AlterarPreco.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        Botao_AlterarPreco.setText("Alterar preço");
+        Botao_AlterarPreco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/eur.png"))); // NOI18N
         Botao_AlterarPreco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Botao_AlterarPreco.setLabel("");
         Botao_AlterarPreco.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botao_AlterarPrecoActionPerformed(evt);
@@ -125,7 +147,7 @@ public class cliente extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Botao_AlterarPreco);
-        Botao_AlterarPreco.setBounds(20, 50, 130, 30);
+        Botao_AlterarPreco.setBounds(130, 45, 40, 40);
 
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/logout.png"))); // NOI18N
         logout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -158,27 +180,6 @@ public class cliente extends javax.swing.JFrame {
         String s = (String) lista_Edif.getSelectedItem();
 
     }//GEN-LAST:event_lista_EdifActionPerformed
-
-    private void Botao_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_ConsultarActionPerformed
-
-        try {
-            Imprimir_Output();
-            
-        } catch (SQLException | ParseException ex) {
-            Logger.getLogger(cliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_Botao_ConsultarActionPerformed
-
-    private void Botao_ConsultarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Botao_ConsultarKeyReleased
-        /*if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            try {
-                Imprimir_Output();
-            } catch (SQLException | ParseException ex) {
-                Logger.getLogger(cliente.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }*/
-    }//GEN-LAST:event_Botao_ConsultarKeyReleased
 
     private void Botao_AlterarPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_AlterarPrecoActionPerformed
         try {
@@ -229,6 +230,30 @@ public class cliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_logoutMouseReleased
 
+    private void precActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_precActionPerformed
+
+    private void Botao_ConsultarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Botao_ConsultarKeyReleased
+        /*if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            try {
+                Imprimir_Output();
+            } catch (SQLException | ParseException ex) {
+                Logger.getLogger(cliente.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }*/
+    }//GEN-LAST:event_Botao_ConsultarKeyReleased
+
+    private void Botao_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_ConsultarActionPerformed
+
+        try {
+            Imprimir_Output();
+
+        } catch (SQLException | ParseException ex) {
+            Logger.getLogger(cliente.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Botao_ConsultarActionPerformed
+
     public void Imprimir_Output() throws SQLException, ParseException {
         DataBase t = new DataBase();
         String s = (String) lista_Edif.getSelectedItem();
@@ -237,19 +262,17 @@ public class cliente extends javax.swing.JFrame {
        
         DefaultTableModel val= (DefaultTableModel) tabela.getModel();
         val.setRowCount(0);
-        
-        /*consultar c;
-        c = new consultar(con);
-        c.setSize(485, 385);
-        c.setTitle("Sistema Central de Gestão: " + (String) lista_Edif.getSelectedItem());
-        c.setVisible(true);*/
-        
+        prec.setText("");
+
+
         
         if (s != null) {
             double preco = t.output_cliente_preco(con, s);
             if (preco != 0) {
                // Output.append("Edificio : " + s);
-                Output.append("\nPreço : " + preco);
+               
+                //Output.append("\nPreço : " + preco);
+                prec.setText(String.valueOf(preco)+ " €");
                 //Output.append("\nConsumo (kWh) : \tDia:\t Hora:\n");
                 ResultSet resultset = t.output_cliente(con, s);
 
@@ -282,6 +305,8 @@ public class cliente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> lista_Edif;
     private javax.swing.JLabel logout;
+    private javax.swing.JTextField prec;
+    private javax.swing.JLabel prec_txt;
     private javax.swing.JTable tabela;
     // End of variables declaration//GEN-END:variables
 
