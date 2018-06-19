@@ -13,7 +13,7 @@ public class add_uti extends javax.swing.JFrame {
 
     String name;
     Connection con;
-//ola
+//adeus
     public add_uti(String n, Connection c) {
         initComponents();
         name = n;
