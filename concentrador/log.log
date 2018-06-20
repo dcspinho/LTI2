@@ -786,3 +786,115 @@ DATA: [Tipo:10 ; End.Ard:4 ; TS:127713 ; PM:3000 ; PA:200 ; NS:200]
 DATA: [Tipo:10 ; End.Ard:3 ; TS:127501 ; PM:3000 ; PA:200 ; NS:200]
 
 DATA: [Tipo:10 ; End.Ard:4 ; TS:130713 ; PM:3000 ; PA:200 ; NS:200]
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 16:37:41.206
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:1990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:4990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:7990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:10990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:13990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:16990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:19990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:22990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:25990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:28990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:31990 ; PM:3000 ; PA:200 ; NS:200]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:34659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:34990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:37659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:37990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:40659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:40990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:43659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:43990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:46659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:46990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:49659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:49990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:52659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:52990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:55659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:55990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:58659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:58990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:61659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:61990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:64659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:64990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:67659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:67990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:70659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:70990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:73659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:73990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:76659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:76990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:79659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:79990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:82659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:82990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:85659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:85990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:88659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:88990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:91659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:91990 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:94659 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:94990 ; PM:3000 ; PA:200 ; NS:200]
