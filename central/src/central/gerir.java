@@ -1,20 +1,14 @@
 package central;
 
-import java.awt.BorderLayout;
-import java.awt.Container;
-import java.awt.List;
+
 import static java.awt.image.ImageObserver.WIDTH;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.Box;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+
 
 public class gerir extends javax.swing.JFrame {
 

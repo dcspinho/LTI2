@@ -1,0 +1,788 @@
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 15:40:52.207
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:1453 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:4453 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:7453 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:10453 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:13453 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:16453 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:19453 ; PM:3000 ; PA:200 ; NS:200]
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 15:41:36.385
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:11909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:14909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:17909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:20909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:23909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:26909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:29909 ; PM:3000 ; PA:200 ; NS:200]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:32909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:33937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:35909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:36937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:38909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:39937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:41909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:42937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:44909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:45937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:47909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:48937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:50909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:51937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:53909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:54937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:56909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:57937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:59909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:60937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:62909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:63937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:65909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:66937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:68909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:69937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:71909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:72937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:74909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:75937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:77909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:78937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:80909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:81937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:83909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:84937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:86909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:87937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:89909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:90937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:92909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:93937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:95909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:96937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:98909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:99937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:101909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:102937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:104909 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:105937 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:1 ; TS:107909 ; PM:3000 ; PA:200 ; NS:200]
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 15:47:32.325
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:2172 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:5172 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:8172 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:11172 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:14172 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:17172 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:20172 ; PM:3000 ; PA:200 ; NS:200]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:22552 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:23172 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:25552 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:26172 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:28552 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:29172 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:31552 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:32172 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:34552 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:35172 ; PM:3000 ; PA:200 ; NS:200]
+Sensor 2 desligado!!
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:37552 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:38172 ; PM:3000 ; PA:200 ; NS:200]
+Sensor simulado conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 16:01:09.638
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:281 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:3281 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:6281 ; PM:3000 ; PA:200 ; NS:200]
+Sensor 2 desligado!!
+Sensor simulado conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 16:01:48.104
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:953 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:3953 ; PM:3000 ; PA:200 ; NS:200]
+Sensor 2 desligado!!
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:6953 ; PM:3000 ; PA:200 ; NS:200]
+Sensor simulado conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 16:02:53.986
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:15880 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:18880 ; PM:3000 ; PA:200 ; NS:200]
+Sensor 3 desligado!!
+Sensor simulado conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 16:03:41.336
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:1627 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:4627 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:7627 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:10627 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:13627 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:16627 ; PM:3000 ; PA:200 ; NS:200]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:18373 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:19627 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:21373 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:2 ; TS:22627 ; PM:3000 ; PA:200 ; NS:200]
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 16:05:07.087
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:4515 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:7515 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:10515 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:13515 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:16515 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:19515 ; PM:3000 ; PA:200 ; NS:200]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:21801 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:22515 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:24801 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:25515 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:27801 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:28515 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:30801 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:31515 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:33801 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:34515 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:36801 ; PM:3000 ; PA:200 ; NS:200]
+Sensor 3 desligado!!
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:37515 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:39801 ; PM:3000 ; PA:200 ; NS:200]
+Sensor simulado conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 16:08:21.241
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:1985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:4985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:7985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:10985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:13985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:16985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:19985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:22985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:25985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:28985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:31985 ; PM:3000 ; PA:200 ; NS:200]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:35716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:34985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:38716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:37985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:41716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:40985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:44716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:43985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:47716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:46985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:50716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:49985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:53716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:52985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:56716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:55985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:59716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:58985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:62716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:61985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:65716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:64985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:68716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:67985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:71716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:70985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:74716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:73985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:77716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:76985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:80716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:79985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:83716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:82985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:86716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:85985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:89716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:88985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:92716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:91985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:95716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:94985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:98716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:97985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:101716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:100985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:104716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:103985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:107716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:106985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:110716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:109985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:113716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:112985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:116716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:115985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:119716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:118985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:122716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:121985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:125716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:124985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:128716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:127985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:131716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:130985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:134716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:133985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:137716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:136985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:140716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:139985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:143716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:142985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:146716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:145985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:149716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:148985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:152716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:151985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:155716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:154985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:158716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:157985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:161716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:160985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:164716 ; PM:3000 ; PA:200 ; NS:200]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:167277 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:163985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:167716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:170277 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:166985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:170716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:173277 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:169985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:173716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:176277 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:172985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:176716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:179277 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:175985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:179716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:182277 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:178985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:182716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:185277 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:181985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:185716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:188277 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:184985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:188716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:191277 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:187985 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:191716 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:194277 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:190985 ; PM:3000 ; PA:200 ; NS:200]
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 16:13:34.417
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:1999 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:4999 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:7999 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:10999 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:13999 ; PM:3000 ; PA:200 ; NS:200]
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 16:14:37.064
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:2677 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:5677 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:8677 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:11677 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:14677 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:17677 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:20677 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:23677 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:26677 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:29677 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:6 ; TS:32677 ; PM:3000 ; PA:200 ; NS:200]
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 16:17:06.963
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:5 ; TS:1939 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:5 ; TS:4939 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:5 ; TS:7939 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:5 ; TS:10939 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:5 ; TS:13939 ; PM:3000 ; PA:200 ; NS:200]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:5 ; TS:16939 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:17426 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:5 ; TS:19939 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:20426 ; PM:3000 ; PA:200 ; NS:200]
+Sensor 3 desligado!!
+Sensor simulado conectado!
+Sensor 5 desligado!!
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 16:20:34.656
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:1501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:4501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:7501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:10501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:13501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:16501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:19501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:22501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:25501 ; PM:3000 ; PA:200 ; NS:200]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:28713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:28501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:31713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:31501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:34713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:34501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:37713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:37501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:40713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:40501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:43713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:43501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:46713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:46501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:49713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:49501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:52713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:52501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:55713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:55501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:58713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:58501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:61713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:61501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:64713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:64501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:67713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:67501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:70713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:70501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:73713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:73501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:76713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:76501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:79713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:79501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:82713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:82501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:85713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:85501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:88713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:88501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:91713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:91501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:94713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:94501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:97713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:97501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:100713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:100501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:103713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:103501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:106713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:106501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:109713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:109501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:112713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:112501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:115713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:115501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:118713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:118501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:121713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:121501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:124713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:124501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:127713 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:127501 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:130713 ; PM:3000 ; PA:200 ; NS:200]

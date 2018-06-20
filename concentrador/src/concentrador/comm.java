@@ -686,7 +686,7 @@ public class comm{
                 }
                 else{
                     //iniciar temporizador
-                    t=new Thread(new comm.esperar(pm+100));
+                    t=new Thread(new comm.esperar(pm+300));
                     t.start();
                 }
 
@@ -1066,7 +1066,7 @@ public class EnviarDados implements Runnable
                 } catch (IOException ex) {
                     Logger.getLogger(comm.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                System.out.println("iniciaCumSocket: Start enviado com sucesso! " );       
+                //System.out.println("iniciaCumSocket: Start enviado com sucesso! " );       
 
                 ArrayList<byte[]> list_c=acede_listadeCodigos(false, null);
                 list_c.add(codd);

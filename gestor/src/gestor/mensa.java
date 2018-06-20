@@ -78,8 +78,7 @@ public class mensa extends javax.swing.JFrame{
 
     
     public static void comeca() throws IOException{
-                    SensoresAtivos sens=new SensoresAtivos();
-                    
+                                      
                     try {
                         m = new mensa();
                         m.setSize(536, 438);
@@ -92,7 +91,7 @@ public class mensa extends javax.swing.JFrame{
                         mapa=LeFile();
 
                        
-                        a=new arranque(c,m, sens,mapa, ultimoTemp, est, ed);
+                        a=new arranque(c,m,mapa, ultimoTemp, est, ed);
                         m.setArranque(a);
                         
                    } catch (SQLException ex) {
@@ -263,7 +262,7 @@ public class mensa extends javax.swing.JFrame{
         getContentPane().setLayout(null);
 
         Consumos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/iconlampada.png"))); // NOI18N
-        Consumos.setText("Consumos");
+        Consumos.setText("Consumos mensais");
         Consumos.setToolTipText("");
         Consumos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -271,7 +270,7 @@ public class mensa extends javax.swing.JFrame{
             }
         });
         getContentPane().add(Consumos);
-        Consumos.setBounds(50, 140, 140, 40);
+        Consumos.setBounds(30, 140, 180, 40);
 
         Output.setEditable(false);
         Output.setBackground(new java.awt.Color(239, 239, 239));
@@ -328,7 +327,7 @@ public class mensa extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void SensoresAtivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SensoresAtivosActionPerformed
-        SensoresAtivos s=new SensoresAtivos();            
+        SensoresAtivos s=new SensoresAtivos(a.getConc(),a);            
         s.setSize(350, 270);
         s.setTitle("Sensores Ativos");
         s.setVisible(true);

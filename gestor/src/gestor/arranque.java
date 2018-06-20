@@ -1,9 +1,7 @@
 
 package gestor;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -48,11 +46,14 @@ public class arranque {
         
         ArrayList<concentrador> lista_conc= new ArrayList<concentrador>();
        
+        public ArrayList<concentrador> getConc(){
+            return lista_conc;
+        } 
         
-        public arranque(ConexaoMySQL cc, mensa mm, SensoresAtivos sss,TreeMap<Long, TreeMap<Integer, Double>> list, long temp, estatist ee, comEd com){
+        
+        public arranque(ConexaoMySQL cc, mensa mm, TreeMap<Long, TreeMap<Integer, Double>> list, long temp, estatist ee, comEd com){
             conex=cc;
             m=mm;
-            sensAt_frame=sss; 
             est=ee;
             mapa=list;
             ultimoTempo=temp;
@@ -89,6 +90,23 @@ public class arranque {
               return ultimoTempo;
         }
         
+        
+        public void START_unico(concentrador cc){
+            
+                byte stop[];
+             
+                try {
+                    stop = cc.stop(freq);
+
+                    DatagramPacket resp= new DatagramPacket(stop, stop.length ,cc.ip_conce, cc.com_conce);
+                    s.send(resp);
+                } catch (IOException ex) {
+                    Logger.getLogger(arranque.class.getName()).log(Level.SEVERE, null, ex);
+                }
+              
+                cc.setSTA(false);
+  
+        }
         
         
         public void acorda(){
@@ -924,10 +942,6 @@ public class arranque {
                 lista_sens_con.add("\n Sensor "+ss.cod_sens+":\n Concentrador "+c.numConc+"; Área "+ss.area+" ("+ss.designacao+")\n");
             }
         }
-        
-        
-        
-
         return lista_sens_con;
     } 
      
@@ -965,7 +979,7 @@ public class arranque {
             do{
                 try {
                     //esperar hello
-                    Thread.sleep(1150);
+                    Thread.sleep(1400);
                     
 
                     if(sen.getAtivo()==true){
