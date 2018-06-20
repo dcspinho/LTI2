@@ -68,34 +68,15 @@ public class SensoresAtivos extends javax.swing.JFrame{
                 
     }
 
-    public void escreverArea_hello(ArrayList<String> lista){
-        
-        for(String s:lista){
-            ScrollOutputHello.setAutoscrolls(true);
-            int maximoH = ScrollOutputHello.getVerticalScrollBar().getMaximum();
-            ScrollOutputHello.getViewport().setViewPosition(new Point(0,maximoH));
-            OutputHELLO.append(s);
-        }        
-    }
     
-     public void escreverArea_start(ArrayList<String> lista){
-        for(String s:lista){
-            ScrollOutputStart.setAutoscrolls(true);
-            int maximoS = ScrollOutputStart.getVerticalScrollBar().getMaximum();
-            ScrollOutputStart.getViewport().setViewPosition(new Point(0,maximoS));
-            OutputSTART.append(s);
-        }        
-    }
+    
+     
 
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ScrollOutputHello = new javax.swing.JScrollPane();
-        OutputHELLO = new javax.swing.JTextArea();
-        ScrollOutputStart = new javax.swing.JScrollPane();
-        OutputSTART = new javax.swing.JTextArea();
         nao_solicitados = new javax.swing.JComboBox<>();
         inf_nao_sol = new javax.swing.JLabel();
         inf_sol = new javax.swing.JLabel();
@@ -108,24 +89,6 @@ public class SensoresAtivos extends javax.swing.JFrame{
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(520, 325));
         getContentPane().setLayout(null);
-
-        OutputHELLO.setEditable(false);
-        OutputHELLO.setBackground(new java.awt.Color(239, 239, 239));
-        OutputHELLO.setColumns(10);
-        OutputHELLO.setRows(5);
-        ScrollOutputHello.setViewportView(OutputHELLO);
-
-        getContentPane().add(ScrollOutputHello);
-        ScrollOutputHello.setBounds(260, 170, 220, 110);
-
-        OutputSTART.setEditable(false);
-        OutputSTART.setBackground(new java.awt.Color(239, 239, 239));
-        OutputSTART.setColumns(10);
-        OutputSTART.setRows(5);
-        ScrollOutputStart.setViewportView(OutputSTART);
-
-        getContentPane().add(ScrollOutputStart);
-        ScrollOutputStart.setBounds(20, 170, 220, 110);
 
         nao_solicitados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -339,10 +302,6 @@ public class SensoresAtivos extends javax.swing.JFrame{
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea OutputHELLO;
-    private javax.swing.JTextArea OutputSTART;
-    private javax.swing.JScrollPane ScrollOutputHello;
-    private javax.swing.JScrollPane ScrollOutputStart;
     private javax.swing.JButton SensoresAtivos;
     private javax.swing.JButton SensoresTransmitir;
     private javax.swing.JLabel inf_nao_sol;

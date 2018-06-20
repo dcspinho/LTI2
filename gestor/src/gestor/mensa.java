@@ -328,12 +328,10 @@ public class mensa extends javax.swing.JFrame{
 
     private void SensoresAtivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SensoresAtivosActionPerformed
         SensoresAtivos s=new SensoresAtivos(a.getConc(),a);            
-        s.setSize(350, 270);
+        s.setSize(50, 50);
         s.setTitle("Sensores Ativos");
         s.setVisible(true);
        
-        s.escreverArea_hello( a.listaSens_Conc_START());
-        s.escreverArea_start(a.listaSens_Conc());
     }//GEN-LAST:event_SensoresAtivosActionPerformed
     
     private void CustosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustosActionPerformed
