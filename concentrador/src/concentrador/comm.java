@@ -27,6 +27,9 @@ import java.util.logging.Logger;
 public class comm{
     
     
+    int t=0;
+    
+    ArrayList<Thread> sensAtivo=new ArrayList<Thread>();
     boolean begin=false;
     
     boolean adicionaCom=true;
@@ -748,13 +751,12 @@ public class comm{
 
 public class EnviarDados implements Runnable 
 {           int contagemSimu=0;
-            String i="start";  
+            String i="stop";  
             log g;
             byte[] acabar=new byte[2];
             OutputStream outt;  
             boolean finito=false;
-            int t=0;
-            Thread sensAtivo[];
+            
             boolean f=false;
             
             public EnviarDados(  OutputStream outt, log gg )
@@ -840,15 +842,15 @@ public class EnviarDados implements Runnable
                             
                             
                             //crio uma thread que fica responsavel por detetar se algum sensor se desliga
-                            sensAtivo=new Thread[t];
+                            sensAtivo=new ArrayList<Thread>();
 
                             
                             
                             for(int j=0; j<t;j++){
-                                sensAtivo[j]=(new Thread(new detetaSens(acede_listaSens(false, null).get(j), acede_listadeCodigos(false, null).get(j))));
+                                sensAtivo.add(new Thread(new detetaSens(acede_listaSens(false, null).get(j), acede_listadeCodigos(false, null).get(j))));
                             }
                             for(int j=0; j<t;j++){
-                                sensAtivo[j].start();
+                                sensAtivo.get(j).start();
                             }  
                              
                             
@@ -894,7 +896,7 @@ public class EnviarDados implements Runnable
                             
                             
                             for(int j=0; j<t;j++){
-                                    sensAtivo[j].stop();
+                                    sensAtivo.get(j).stop();
                             } 
                             
                         }   
@@ -951,7 +953,7 @@ public class EnviarDados implements Runnable
                                     }
                                     
                                         for(int j=0; j<t;j++){
-                                            sensAtivo[j].stop();
+                                            sensAtivo.get(j).stop();
                                         }
                                     
                                     System.exit(0);
@@ -1033,18 +1035,49 @@ public class EnviarDados implements Runnable
                     
                 
                 //criar novo sensor
-                sensor s=new sensor(r.getPort(),r.getAddress(), true);
+                sensor sens=new sensor(r.getPort(),r.getAddress(), true);
                 //adicionar sensor a lista
-                lista_sensores_temp.add(s);
+                //lista_sensores_temp.add(s);
                 num_thr++;
                
                 byte codd[]=new byte[2];
                 codd[0]=tramaGeral[2];
                 codd[1]=tramaGeral[1];
                 
-                cod_sensores_temp.add(codd);
+                //cod_sensores_temp.add(codd);
 
+                                                                                          
+                ArrayList<sensor> list=acede_listaSens(false, null);
+                //for(sensor s:lista_sensores_temp) {
+                list.add(sens);
+                //}
+                acede_listaSens(true, list);
                 
+                //lista_sensores_temp=new ArrayList<sensor>();
+                                                      
+                nBytes=0;
+                obj=sta.constTrama();                            
+                byte b= (byte)obj[13];
+                ns= unsignedByteToInt(b);
+                            
+                DatagramPacket resp= new DatagramPacket(obj, 14,sens.ip_sensor, sens.com_sensor);
+                try {
+                    s.send(resp);
+                } catch (IOException ex) {
+                    Logger.getLogger(comm.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                System.out.println("iniciaCumSocket: Start enviado com sucesso! " );       
+
+                ArrayList<byte[]> list_c=acede_listadeCodigos(false, null);
+                list_c.add(codd);
+                acede_listadeCodigos(true, list_c);
+                
+                
+                t=acede_listaSens(false, null).size();
+                sensAtivo.add(new Thread(new detetaSens(sens, codd)));
+                sensAtivo.get(t-1).start();
+                
+
             }
             while(ouve==true);
         }

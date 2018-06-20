@@ -1,13 +1,11 @@
 package central;
 
-import static central.inicial.con;
 import java.awt.Color;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -224,6 +222,7 @@ public class gestor extends javax.swing.JFrame {
                 cli = new cliente(lista, con, user);
                 cli.setSize(445, 350);
                 cli.setTitle("Sistema Central de Gestão: " + nome.getText());
+                cli.setLocationRelativeTo(null);
                 cli.setVisible(true);
             } catch (SQLException ex) {
                 Logger.getLogger(gestor.class.getName()).log(Level.SEVERE, null, ex);
@@ -239,6 +238,7 @@ public class gestor extends javax.swing.JFrame {
             add_uti m = new add_uti(nome.getText(), con);
             m.setSize(400, 300);
             m.setTitle("Adicionar Utilizador");
+            m.setLocationRelativeTo(null);
             m.setVisible(true);
         } else if (code != -1) {
             JOptionPane.showMessageDialog(null, "    Utilizador já existente!", "Sistema Central de Gestão", JOptionPane.ERROR_MESSAGE);
@@ -256,6 +256,7 @@ public class gestor extends javax.swing.JFrame {
                     lista = t.pesquisar_edificio_user(con, user);
                     gerir m = new gerir(con, lista, nome.getText());
                     m.setSize(300, 300);
+                    m.setLocationRelativeTo(null);
                     m.setTitle("Gerir Edifícios");
                     m.setVisible(true);
                 }
@@ -345,13 +346,16 @@ public class gestor extends javax.swing.JFrame {
         if (resp == 0) {
             try {
                 setVisible(false);
-                cli.setVisible(false);
+                
                 
                 inicial ini;
                 ini = new inicial();
                 ini.setSize(400, 300);
+                ini.setLocationRelativeTo(null);
                 ini.setTitle("Sistema Central de Gestão");
                 ini.setVisible(true);
+                
+                
             } catch (IOException | ClassNotFoundException | SQLException | ParseException ex) {
                 Logger.getLogger(gestor.class.getName()).log(Level.SEVERE, null, ex);
             }

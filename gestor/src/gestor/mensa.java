@@ -2,24 +2,111 @@
 package gestor;
 
 
+
 import java.awt.Point;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.TreeMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
+import javax.swing.UnsupportedLookAndFeelException;
 
 
 
 public class mensa extends javax.swing.JFrame{
     
-    public arranque a;
-    String user;
+    static arranque a;
+
+    static ConexaoMySQL c;
+    static TreeMap<Long, TreeMap<Integer, Double>> mapa;
+    static long ultimoTemp;
+    static String[] begin;
+    static estatist est;
+    static comEd ed;
+    static mensa m;
+   
+    public mensa() throws SQLException {
+        
+        initComponents();
+        
+        c= new ConexaoMySQL();
+        c.getConexaoMySQL();
+
+    }
     
 
-    public mensa(String u) {
-        initComponents();
-        this.user=u;
+    public static void main(String args[]) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+       
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    try {
+                        javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    } catch (UnsupportedLookAndFeelException ex) {
+                        Logger.getLogger(mensa.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    break;
+                }
+            }
+
+   
+           java.awt.EventQueue.invokeLater(new Runnable() {
+            
+               
+               public void run() {
+
+                   try {
+                        //ler ficheiro config
+                        begin=conf();
+                        est = new estatist();   
+                        ed=new comEd(begin[2],begin[3],begin[4], est);                 
+                        ed.iniciaCOM();    
+                        comeca();
+                   } catch (IOException ex) {
+                       Logger.getLogger(mensa.class.getName()).log(Level.SEVERE, null, ex);
+                   }
+                    
+                    
+                    
+              }
+        });
     }
+
+    
+    public static void comeca() throws IOException{
+                    SensoresAtivos sens=new SensoresAtivos();
+                    
+                    try {
+                        m = new mensa();
+                        m.setSize(536, 438);
+                        m.setTitle("Sistema Gestor de Edifício");
+                        m.setLocationRelativeTo(null);
+                        m.setVisible(true);
+                        
+                        
+                
+                        mapa=LeFile();
+
+                       
+                        a=new arranque(c,m, sens,mapa, ultimoTemp, est, ed);
+                        m.setArranque(a);
+                        
+                   } catch (SQLException ex) {
+                       Logger.getLogger(mensa.class.getName()).log(Level.SEVERE, null, ex);
+                   }
+                    
+
+                    a.comecar(begin);
+    
+           
+    
+    }
+    
+    
 
     public void escreverArea(String s){
         ScrollOutput.setAutoscrolls(true);
@@ -44,6 +131,118 @@ public class mensa extends javax.swing.JFrame{
             /*concentrador x conectado*/    
     }
 
+    
+    //CONF feita no txt
+    public static String[] conf() throws IOException{    
+                String arquivoCSV = "conf.txt";
+                BufferedReader br = null;
+                String linha = "";
+                String csvDivisor = ";";
+                String[] begin= new String[7];
+
+                try {
+                    br = new BufferedReader(new FileReader(arquivoCSV));
+
+                    while ((linha = br.readLine()) != null) {
+                        begin = linha.split(csvDivisor); 
+                    }
+                    //g.atualiza("[COM:" + begin[0] +" , Baud-rate:" + begin[1] + " , PA:" + Integer.parseInt(begin[2]) +" microssegundos"+ " , PM:" + Integer.parseInt(begin[3]) +" milissegundos"+ " , NS:" + begin[4]+  " , Porta_sockets:" + Integer.parseInt(begin[5]) + " , IP:" + begin[6] + "]");
+
+                } catch (FileNotFoundException e) {
+                    //g.atualiza("Erro: falha na leitura do ficheiro de conf!");
+                } catch (IOException e) {
+                    //g.atualiza("Erro: falha na leitura do ficheiro de conf!");
+                } finally {
+                    if (br != null) {
+                        try {
+                            br.close();
+                        } catch (IOException e) {
+                               //g.atualiza("Erro: falha na leitura do ficheiro de conf!");
+                        }
+                    }
+                }
+            return begin;
+    }
+    
+    public static TreeMap<Long, TreeMap<Integer, Double>> LeFile() throws IOException{
+            
+            File arquivo = new File("ESTAT.csv");
+            TreeMap<Integer, Double> list=new  TreeMap<Integer, Double> ();
+            TreeMap<Long, TreeMap<Integer, Double>> map=new TreeMap<Long, TreeMap<Integer, Double>> ();
+            
+            
+                if (!arquivo.exists()) {     
+                    arquivo.createNewFile();
+                    for(int i=0;i<3;i++){
+                        list.put(i+1,(double)0);
+                    }
+                    map.put((long)0,list);                 
+                }
+                else{
+
+                    BufferedReader StrR = new BufferedReader(new FileReader(arquivo));
+
+                    String Str;
+                    String[] TableLine;
+
+                    //ler cada linha do file
+                    while((Str = StrR.readLine())!= null){
+                        
+                        //Aqui usamos o método split que divide a linha lida em um array de String
+                        
+                        //passando como parametro o divisor ";".
+                        TableLine = Str.split(";");
+
+                       
+                        list= new TreeMap<Integer, Double>();
+                        
+                        int i=0; 
+                        int area=0;
+                        long time=0;
+                                                
+                        //imprimie cada parametro do array de String
+                        for (String cell : TableLine) {  
+                            
+                            if(i==0){
+                               time=Long.parseLong(cell); 
+                               ultimoTemp=time;
+                            }                  
+                            else if(i%2==0){  //é valor e posso adicionar
+                                cell=cell.replaceAll( "," , "." );
+                                double valorDouble = Double.parseDouble(cell);
+                                list.put(area,valorDouble);
+                                
+                            }
+                            else if (i%2!=0){ //é area
+                                area=Integer.parseInt(cell);
+                            }
+                            
+                            i++;
+
+                        }
+
+                        map.put(time,list);                
+                        
+               
+                    }
+                    
+                 
+                } 
+                
+                /*for(Long l:map.keySet()){
+                    TreeMap<Integer, Double> ll= new TreeMap<Integer, Double>();
+                    ll=map.get(l);
+                    System.out.println("\n "+l);
+                    for(int i:ll.keySet()){
+                        System.out.print(i+";"+ll.get(i)+";");
+                    }
+  
+                }*/
+                
+                 return map; 
+    }
+    
+    
     
     
     @SuppressWarnings("unchecked")
@@ -131,7 +330,7 @@ public class mensa extends javax.swing.JFrame{
     private void SensoresAtivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SensoresAtivosActionPerformed
         SensoresAtivos s=new SensoresAtivos();            
         s.setSize(350, 270);
-        s.setTitle("Sensores Ativos                Utilizador: "+user);
+        s.setTitle("Sensores Ativos");
         s.setVisible(true);
        
         s.escreverArea_hello( a.listaSens_Conc_START());
@@ -141,7 +340,7 @@ public class mensa extends javax.swing.JFrame{
     private void CustosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustosActionPerformed
         Custos c=new Custos();            
         c.setSize(350, 270);
-        c.setTitle("Custos        Utilizador: "+user);
+        c.setTitle("Custos");
         c.setVisible(true);
 
         a.acumUltimaHora(c);
@@ -168,7 +367,7 @@ public class mensa extends javax.swing.JFrame{
         
         Consumos c=new Consumos();
         c.setSize(350, 270);
-        c.setTitle("Consumos        Utilizador: "+user);
+        c.setTitle("Consumos");
         c.setVisible(true);
             
         a.mostrarCons(c);

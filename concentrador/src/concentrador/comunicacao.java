@@ -96,8 +96,7 @@ public class comunicacao {
                     }
                     
                 }while(i==0);
-                
-                
+  
             }
             
     }
