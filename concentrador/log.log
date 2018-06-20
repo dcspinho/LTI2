@@ -1,0 +1,40 @@
+---------------------INICIO---------------------
+Arranque:
+2018-06-20 16:50:26.261
+[COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor simulado conectado!
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:2858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:5858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:8858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:11858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:14858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:17858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:20858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:23858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:26858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:29858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:32858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:35858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:38858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:41858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:44858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:47858 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:3 ; TS:50858 ; PM:3000 ; PA:200 ; NS:200]
+Sensor 3 desligado!!

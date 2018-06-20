@@ -2,3 +2,11 @@
 *.properties
 *.properties
 *.properties
+*.properties
+*.properties
+*.properties
+concentrador/nbproject/private/private.properties
+concentrador/nbproject/private/private.xml
+gestor/nbproject/private/private.properties
+sensor/nbproject/private/private.properties
+*.properties
