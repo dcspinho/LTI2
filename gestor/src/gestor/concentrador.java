@@ -130,6 +130,14 @@ public class concentrador {
         return ip_conce;
     }
     
+    public void atualizaLista_START( ArrayList<sensor> lista){
+        lista_sensores_comunicao=lista;
+    }
+    
+    public void atualizaLista_cod_START( ArrayList<byte[]> lista){
+        lista_sensores_cod_comunicao=lista;
+     }
+    
     public void atualizaLista( ArrayList<byte[]> lista){
         lista_sensores_cod=lista;
         /*System.out.println("Lista atualizada: ");

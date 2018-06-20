@@ -341,7 +341,28 @@ public class arranque {
                                         if(lista_START.size()!=lista_HELLO.size()){
                                             c.setEstadoSen(true);
                                             m.Aviso("Estado dos sensores alterado! (Concentrador "+c.numConc+")");                                            
-                                        }                                  
+                                        }
+                                        
+                                        ArrayList<sensor> lista_START_atual= new ArrayList<sensor>();
+                                        ArrayList<byte[]> lista_START_cod_atual= new ArrayList<byte[]>();
+                                        boolean existe=false;
+                                        for(sensor ss:lista_START){
+                                            for(sensor sss:lista_HELLO){
+                                                if(ss.cod_sens==sss.cod_sens){
+                                                    existe=true;
+                                                }    
+                                            }
+                                            if(existe==true){
+                                                lista_START_atual.add(ss);
+                                                lista_START_cod_atual.add(ss.cod);
+                                            }
+                                            existe=false;
+                                        }
+                                        
+                                        c.atualizaLista_START(lista_START_atual);
+                                        c.atualizaLista_cod_START(lista_START_cod_atual);
+                                        
+                               
                                 }
                                 
                                 
