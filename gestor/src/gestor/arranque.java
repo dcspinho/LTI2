@@ -493,13 +493,15 @@ public class arranque {
                             
                             
                             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd  HH:mm:ss:SS");
+                            SimpleDateFormat sdf_dia = new SimpleDateFormat("yyyy/MM/dd");
+                            SimpleDateFormat sdf_hora = new SimpleDateFormat("HH:mm:ss:SS");
                             GregorianCalendar calendarnovo=new GregorianCalendar();
                             calendarnovo.setTimeInMillis(timestamp);
                             String dataReal=sdf.format(calendarnovo.getTime());
                             
                             //escrever na interface isto
-                            m.escreverArea("\n Mens. dados recebida: \n C"+lista_conc.get(posicao).numConc+": "+dataReal+"\n");
-                            
+                            //m.escreverArea("\n Mens. dados recebida: \n C"+lista_conc.get(posicao).numConc+": "+dataReal+"\n");
+                            m.addTabela(lista_conc.get(posicao).numConc,sdf_dia.format(calendarnovo.getTime()),sdf_hora.format(calendarnovo.getTime()));
                                                         
                             for(int i=10;i<10+(16*n);i=i+16){
                                 byte[] t= new byte[16];

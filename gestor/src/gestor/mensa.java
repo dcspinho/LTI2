@@ -3,6 +3,7 @@ package gestor;
 
 
 
+import java.awt.Color;
 import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.File;
@@ -15,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.table.DefaultTableModel;
 
 
 
@@ -29,14 +31,17 @@ public class mensa extends javax.swing.JFrame{
     static estatist est;
     static comEd ed;
     static mensa m;
+    DefaultTableModel val;
    
     public mensa() throws SQLException {
-        
         initComponents();
-        
+        anual.setEnabled(false);
+        anual.setForeground(Color.BLACK);
         c= new ConexaoMySQL();
         c.getConexaoMySQL();
 
+        val= (DefaultTableModel) tabela.getModel();
+        val.setRowCount(0);
     }
     
 
@@ -101,18 +106,15 @@ public class mensa extends javax.swing.JFrame{
 
                     a.comecar(begin);
     
-           
     
     }
     
     
-
-    public void escreverArea(String s){
-        ScrollOutput.setAutoscrolls(true);
-        int maximo = ScrollOutput.getVerticalScrollBar().getMaximum();
-        ScrollOutput.getViewport().setViewPosition(new Point(0,maximo));
-        Output.append(s);        
+    
+    public void addTabela(int conc, String dia, String hora){    
+         val.addRow(new String[] {Integer.toString(conc),dia,hora});
     }
+    
 
     public void setArranque(arranque aa){
         a=aa;
@@ -199,7 +201,7 @@ public class mensa extends javax.swing.JFrame{
                         int area=0;
                         long time=0;
                                                 
-                        //imprimie cada parametro do array de String
+                        //imprimi cada parametro do array de String
                         for (String cell : TableLine) {  
                             
                             if(i==0){
@@ -222,7 +224,9 @@ public class mensa extends javax.swing.JFrame{
 
                         map.put(time,list);                
                         
-               
+                        
+                        
+                                    
                     }
                     
                  
@@ -249,11 +253,12 @@ public class mensa extends javax.swing.JFrame{
     private void initComponents() {
 
         Consumos = new javax.swing.JButton();
-        ScrollOutput = new javax.swing.JScrollPane();
-        ScrollOutput = new javax.swing.JScrollPane();
-        Output = new javax.swing.JTextArea();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabela = new javax.swing.JTable();
         SensoresAtivos = new javax.swing.JButton();
         Custos = new javax.swing.JButton();
+        anual = new javax.swing.JButton();
+        config = new javax.swing.JButton();
         BotaoStartStop = new javax.swing.JToggleButton();
         Fundo = new javax.swing.JLabel();
 
@@ -270,15 +275,20 @@ public class mensa extends javax.swing.JFrame{
             }
         });
         getContentPane().add(Consumos);
-        Consumos.setBounds(30, 140, 180, 40);
+        Consumos.setBounds(10, 120, 180, 40);
 
-        Output.setEditable(false);
-        Output.setBackground(new java.awt.Color(239, 239, 239));
-        Output.setMinimumSize(new java.awt.Dimension(1, 22));
-        ScrollOutput.setViewportView(Output);
+        tabela.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        getContentPane().add(ScrollOutput);
-        ScrollOutput.setBounds(240, 20, 250, 360);
+            },
+            new String [] {
+                "Concentrador", "Dia", "Hora"
+            }
+        ));
+        jScrollPane1.setViewportView(tabela);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(200, 70, 310, 280);
 
         SensoresAtivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icon2.png"))); // NOI18N
         SensoresAtivos.setText("Estado dos sensores");
@@ -288,7 +298,7 @@ public class mensa extends javax.swing.JFrame{
             }
         });
         getContentPane().add(SensoresAtivos);
-        SensoresAtivos.setBounds(30, 70, 180, 40);
+        SensoresAtivos.setBounds(10, 70, 180, 40);
 
         Custos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/icondinheiro1.png"))); // NOI18N
         Custos.setText("Custos");
@@ -299,7 +309,25 @@ public class mensa extends javax.swing.JFrame{
             }
         });
         getContentPane().add(Custos);
-        Custos.setBounds(60, 210, 120, 40);
+        Custos.setBounds(10, 170, 180, 40);
+
+        anual.setBackground(new java.awt.Color(255, 102, 0));
+        anual.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        anual.setText("Dados recebidos");
+        anual.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(anual);
+        anual.setBounds(280, 30, 160, 30);
+
+        config.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/conf.png"))); // NOI18N
+        config.setText("Configurações");
+        config.setToolTipText("");
+        config.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                configActionPerformed(evt);
+            }
+        });
+        getContentPane().add(config);
+        config.setBounds(10, 220, 180, 40);
 
         BotaoStartStop.setBackground(new java.awt.Color(255, 149, 149));
         BotaoStartStop.setSelected(true);
@@ -312,7 +340,7 @@ public class mensa extends javax.swing.JFrame{
             }
         });
         getContentPane().add(BotaoStartStop);
-        BotaoStartStop.setBounds(20, 310, 210, 30);
+        BotaoStartStop.setBounds(40, 300, 130, 30);
 
         Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/factura-luz.png"))); // NOI18N
         Fundo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -329,6 +357,7 @@ public class mensa extends javax.swing.JFrame{
     private void SensoresAtivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SensoresAtivosActionPerformed
         SensoresAtivos s=new SensoresAtivos(a.getConc(),a);            
         s.setSize(470, 230);
+        s.setLocationRelativeTo(null);
         s.setTitle("Sensores Ativos");
         s.setVisible(true);
        
@@ -337,6 +366,7 @@ public class mensa extends javax.swing.JFrame{
     private void CustosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustosActionPerformed
         Custos c=new Custos(a);            
         c.setSize(350, 270);
+        c.setLocationRelativeTo(null);
         c.setTitle("Custos");
         c.setVisible(true);
 
@@ -366,6 +396,7 @@ public class mensa extends javax.swing.JFrame{
         Consumos c=new Consumos(a);
         c.setSize(350, 270);
         c.setTitle("Consumos");
+        c.setLocationRelativeTo(null);
         
             
         a.descobrirMeses(c);
@@ -373,6 +404,11 @@ public class mensa extends javax.swing.JFrame{
         c.setVisible(true);
         
     }//GEN-LAST:event_ConsumosActionPerformed
+
+    private void configActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configActionPerformed
+       //m.setLocationRelativeTo(null);
+        
+    }//GEN-LAST:event_configActionPerformed
 
    
    
@@ -382,9 +418,16 @@ public class mensa extends javax.swing.JFrame{
     private javax.swing.JButton Consumos;
     private javax.swing.JButton Custos;
     private javax.swing.JLabel Fundo;
-    public javax.swing.JTextArea Output;
-    private javax.swing.JScrollPane ScrollOutput;
     private javax.swing.JButton SensoresAtivos;
+    private javax.swing.JButton SensoresAtivos1;
+    private javax.swing.JButton SensoresAtivos2;
+    private javax.swing.JButton SensoresTransmitir;
+    private javax.swing.JButton SensoresTransmitir1;
+    private javax.swing.JButton SensoresTransmitir2;
+    private javax.swing.JButton anual;
+    private javax.swing.JButton config;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tabela;
     // End of variables declaration//GEN-END:variables
 
 
