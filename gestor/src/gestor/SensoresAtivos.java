@@ -86,7 +86,7 @@ public class SensoresAtivos extends javax.swing.JFrame{
         naoseioquee = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(520, 325));
+        setMinimumSize(new java.awt.Dimension(50, 100));
         getContentPane().setLayout(null);
 
         nao_solicitados.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +95,7 @@ public class SensoresAtivos extends javax.swing.JFrame{
             }
         });
         getContentPane().add(nao_solicitados);
-        nao_solicitados.setBounds(70, 50, 150, 30);
+        nao_solicitados.setBounds(70, 70, 150, 30);
 
         inf_nao_sol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/inf.png"))); // NOI18N
         inf_nao_sol.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -107,7 +107,7 @@ public class SensoresAtivos extends javax.swing.JFrame{
             }
         });
         getContentPane().add(inf_nao_sol);
-        inf_nao_sol.setBounds(30, 45, 30, 40);
+        inf_nao_sol.setBounds(30, 70, 30, 40);
 
         inf_sol.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/inf.png"))); // NOI18N
         inf_sol.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -119,7 +119,7 @@ public class SensoresAtivos extends javax.swing.JFrame{
             }
         });
         getContentPane().add(inf_sol);
-        inf_sol.setBounds(390, 45, 30, 40);
+        inf_sol.setBounds(390, 70, 30, 40);
 
         SensoresTransmitir.setBackground(new java.awt.Color(255, 102, 0));
         SensoresTransmitir.setText("Solicitados");
@@ -129,7 +129,7 @@ public class SensoresAtivos extends javax.swing.JFrame{
             }
         });
         getContentPane().add(SensoresTransmitir);
-        SensoresTransmitir.setBounds(230, 20, 150, 30);
+        SensoresTransmitir.setBounds(230, 40, 150, 30);
 
         solicitados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +137,7 @@ public class SensoresAtivos extends javax.swing.JFrame{
             }
         });
         getContentPane().add(solicitados);
-        solicitados.setBounds(230, 50, 150, 30);
+        solicitados.setBounds(230, 70, 150, 30);
 
         start.setBackground(new java.awt.Color(255, 149, 149));
         start.setSelected(true);
@@ -150,7 +150,7 @@ public class SensoresAtivos extends javax.swing.JFrame{
             }
         });
         getContentPane().add(start);
-        start.setBounds(70, 100, 150, 30);
+        start.setBounds(70, 120, 150, 30);
 
         SensoresAtivos.setBackground(new java.awt.Color(255, 102, 0));
         SensoresAtivos.setText("Não solicitados");
@@ -161,14 +161,14 @@ public class SensoresAtivos extends javax.swing.JFrame{
             }
         });
         getContentPane().add(SensoresAtivos);
-        SensoresAtivos.setBounds(70, 20, 150, 30);
+        SensoresAtivos.setBounds(70, 40, 150, 30);
         SensoresAtivos.getAccessibleContext().setAccessibleDescription("");
 
         naoseioquee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/luz2.jpg"))); // NOI18N
         naoseioquee.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         naoseioquee.setMaximumSize(new java.awt.Dimension(350, 270));
         naoseioquee.setMinimumSize(new java.awt.Dimension(350, 270));
-        naoseioquee.setPreferredSize(new java.awt.Dimension(350, 270));
+        naoseioquee.setPreferredSize(new java.awt.Dimension(250, 270));
         getContentPane().add(naoseioquee);
         naoseioquee.setBounds(-80, -90, 580, 380);
 

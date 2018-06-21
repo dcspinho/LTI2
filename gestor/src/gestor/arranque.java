@@ -9,6 +9,7 @@ import java.nio.ByteBuffer;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 import java.util.TreeMap;
@@ -657,7 +658,78 @@ public class arranque {
         
         
         
+        public void acumUltimoMes(Custos c){
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd HH.mm.ss.SS");  
+            GregorianCalendar calendar=new GregorianCalendar();
+            long tempAgora=calendar.getTimeInMillis();
+            DecimalFormat df_ener = new DecimalFormat("###,#####0.000");
+            DecimalFormat df_custo = new DecimalFormat("###,##0.00");
+            
+            TreeMap<Long, TreeMap<Integer, Double>> map= mapa;
+            
+            
+            String dataReal=sdf.format(tempAgora);
+            //System.out.println("Data Agora: "+ dataReal);
+            
+            int mes_agora = calendar.get(GregorianCalendar.MONTH);
+            //System.out.println("Mes Agora: "+ mes_agora);
+            
+            
+            
+            TreeMap<Integer, Double> valores2= new TreeMap<Integer, Double>();
+            Long lastT=map.lastKey();
+            for(long t:map.keySet()){            
+                //quando encontrar um tempo maior que o que estou à procura
+                if(t==lastT){
+                    valores2=map.get(t);
+                    dataReal=sdf.format(t);
+                    //System.out.println("\nUltimo Tempo que existe: "+ t);
+                    //System.out.println("Ultima data que existe: "+ dataReal);
+                }
+
+            }
+            double acumAgora=0;
+            for(int i:valores2.keySet()){
+                  acumAgora=acumAgora+valores2.get(i);
+            }
+            //System.out.println("Acumulado de agora: "+ acumAgora);
+            
+            
         
+            Calendar calendar_temp = Calendar.getInstance();
+            boolean entra=false;
+            TreeMap<Integer, Double> valores1= new TreeMap<Integer, Double>();
+            for(long temp:map.keySet()){ 
+                calendar_temp.setTimeInMillis(temp);
+                
+                //quando encontrar o primeiro do mes que quero
+                if((calendar_temp.get(GregorianCalendar.MONTH)==mes_agora)&&(entra==false)){                  
+                    //System.out.println("Encontrei");
+                    valores1=map.get(temp);
+                    entra=true;
+                    dataReal=sdf.format(temp);
+                    //System.out.println("\nTempo: "+ temp);
+                }
+            }
+            double acumAntes=0;
+            for(int i:valores1.keySet()){
+                  acumAntes=acumAntes+valores1.get(i);
+            }
+            //System.out.println("Acumulado no inicio do mes: "+ acumAntes);
+            
+ 
+            double acum;
+            acum=acumAgora-acumAntes;
+            
+            //System.out.println("\nRESULTADO: "+ acum+" kWh");
+            double custo=acum*comEdif.getPrec();/*comEdif.getPrec();*/
+            //System.out.println("\nCUSTO: "+ df_custo.format(custo)+" €");
+            //System.out.println("\nCUSTO: "+ custo+" €");
+            
+            c.escreverEnergiaUltimoMes(df_ener.format(acum*(3.6*Math.pow(10,6)))+" J");
+            c.escreverCustoUltimoMes(df_custo.format(custo)+" €");
+            
+        }
         
         
         
@@ -878,7 +950,7 @@ public class arranque {
                     ArrayList<sensor> listS=c.acedeLista_sens_START();
                     for(sensor s:listS){
                         double ene=(3.6*Math.pow(10,6))*(s.acede_ultimo_PM(false, 0));
-                        lista_cons.add("Sensor "+s.cod_sens+"   : "+df.format(ene) +" J");
+                        lista_cons.add("Sensor "+s.cod_sens+": "+df.format(ene) +" J");
                     }
                 }
                 

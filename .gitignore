@@ -10,3 +10,4 @@ concentrador/nbproject/private/private.xml
 gestor/nbproject/private/private.properties
 sensor/nbproject/private/private.properties
 *.properties
+/central/build/
