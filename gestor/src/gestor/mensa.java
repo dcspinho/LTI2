@@ -262,7 +262,7 @@ public class mensa extends javax.swing.JFrame{
         getContentPane().setLayout(null);
 
         Consumos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/iconlampada.png"))); // NOI18N
-        Consumos.setText("Consumos mensais");
+        Consumos.setText("Consumos");
         Consumos.setToolTipText("");
         Consumos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -363,12 +363,15 @@ public class mensa extends javax.swing.JFrame{
 
     private void ConsumosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsumosActionPerformed
         
-        Consumos c=new Consumos();
+        Consumos c=new Consumos(a);
         c.setSize(350, 270);
         c.setTitle("Consumos");
-        c.setVisible(true);
+        
             
+        a.descobrirMeses(c);
         a.mostrarCons(c);
+        c.setVisible(true);
+        
     }//GEN-LAST:event_ConsumosActionPerformed
 
    

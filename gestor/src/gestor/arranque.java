@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.TreeMap;
 import java.util.logging.Level;
@@ -679,7 +680,6 @@ public class arranque {
             TreeMap<Integer, Double> valores2= new TreeMap<Integer, Double>();
             Long lastT=map.lastKey();
             for(long t:map.keySet()){            
-                //quando encontrar um tempo maior que o que estou à procura
                 if(t==lastT){
                     valores2=map.get(t);
                     dataReal=sdf.format(t);
@@ -834,13 +834,7 @@ public class arranque {
             DecimalFormat df = new DecimalFormat("###,##0.00");
             ArrayList<sensor> list_sens;
             boolean ent=true;
-
-            
-            public consAcum(){
-                
-            }
-        
-            
+  
     
             public void run(){
                 
@@ -904,35 +898,237 @@ public class arranque {
                         
                 }while(ent==true);
             }
-            
-   
-            
-  
+
         }
         
         
-        public void mostrarCons(Consumos c_frame){
-                
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        public void descobrirMeses(Consumos c_frame){
+  
+            TreeMap<Long, TreeMap<Integer, Double>> map= mapa;        
+            
+            Calendar calendar_temp = Calendar.getInstance();
+            boolean entra=false;
+            int mes_inicial=0;
+            for(long temp:map.keySet()){ 
+                calendar_temp.setTimeInMillis(temp);
+                if((calendar_temp.get(GregorianCalendar.MONTH)>mes_inicial)&&(entra==false)){   //predefinir a origem correta
+                    mes_inicial=calendar_temp.get(GregorianCalendar.MONTH);
+                    entra=true;
+                }
+                //quando encontrar muda de mes
+                if((calendar_temp.get(GregorianCalendar.MONTH)==mes_inicial)){
+                    c_frame.addMes(getMES(mes_inicial));
+                    mes_inicial++;
+                }
+            }
+        }
+        
+        
+        
+        public String getMES(int i){
+            if(i==0){
+                return " janeiro";
+            }
+            else if(i==1){
+                return " fevereiro";
+            }
+            else if(i==2){
+                return " março";
+            }
+            else if(i==3){
+                return " abril";
+            }
+            else if(i==4){
+                return " maio";
+            }
+            else if(i==5){
+                return " junho";
+            }
+            else if(i==6){
+                return " julho";
+            }
+            else if(i==7){
+                return " agosto";
+            }
+            else if(i==8){
+                return " setembro";
+            }
+            else if(i==9){
+                return " outubro";
+            }
+            else if(i==10){
+                return " novembro";
+            }
+            else if(i==11){
+                return " dezembro";
+            }
+            
+            return "";
+        }
+        
+        
+        public int getMES_int(String i){
+            if(i.equals(" janeiro")){
+                return 0;
+            }
+            else if(i.equals(" fevereiro")){
+                return 1;
+            }
+            else if(i.equals(" março")){
+                return 2;
+            }
+            else if(i.equals(" abril")){
+                return 3;
+            }
+            else if(i.equals(" maio")){
+                return 4;
+            }
+            else if(i.equals(" junho")){
+                return 5;
+            }
+            else if(i.equals(" julho")){
+                return 6;
+            }
+            else if(i.equals(" agosto")){
+                return 7;
+            }
+            else if(i.equals(" setembro")){
+                return 8;
+            }
+            else if(i.equals(" outubro")){
+                return 9;
+            }
+            else if(i.equals(" novembro")){
+                return 10;
+            }
+            else if(i.equals(" dezembro")){
+                return 11;
+            }
+            
+            return 0;
+        }
+        
+        
+        
+        
+        
+        
+        public void consumosDoMes(Consumos c_frame, String s){
                 DecimalFormat df = new DecimalFormat("###,#####0.00000");
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd     HH:mm:ss:SS"); 
-                
-                double acum=0;
-                long t=ultimoTempo(false,0);
-                String dataReal=sdf.format(t);
-                //System.out.println("time: " +t);
-                TreeMap<Integer, Double> ultimo=atualiza_retornaMAPA(false, null, 0);
-                
+                int mes=getMES_int(s);
+                //System.out.println("Mes: "+mes);
+            
+                TreeMap<Long, TreeMap<Integer, Double>> map= mapa;        
                 ArrayList<String> lista_cons_area= new ArrayList<String>();
-
+                HashMap<Integer, String> lista_area=conex.area_designacao;
                 
-                lista_cons_area.add("      "+dataReal+"\n");
                 
-                for (Integer i: ultimo.keySet()){
-                    acum=acum+ultimo.get(i);
-                    lista_cons_area.add("\n Área "+i+":\n Consumo acumulado: "+df.format(ultimo.get(i))+" kWh"+"\n");
+                Calendar calendar_temp = Calendar.getInstance();
+                boolean entra=false;
+                boolean entra1=false;
+                TreeMap<Integer, Double> lista_inicial= new TreeMap<Integer, Double>();
+                TreeMap<Integer, Double> lista_final= new TreeMap<Integer, Double>();
+                
+                
+                long temp_velho=0;
+                for(long temp:map.keySet()){ 
+                    calendar_temp.setTimeInMillis(temp);
+                    
+                    //quando encontrar o primeiro
+                    if((calendar_temp.get(GregorianCalendar.MONTH)==mes)&&(entra==false)){
+                        lista_inicial=map.get(temp);
+                        entra=true;
+                        //System.out.println("Tempo_Inicial: "+ temp);
+                    }
+                    if((calendar_temp.get(GregorianCalendar.MONTH)>mes)&&(entra1==false)){
+                        lista_final=map.get(temp_velho);
+                        entra1=true;
+                        //System.out.println("Tempo_Final: "+ temp);
+                    } 
+                    temp_velho=temp;
                 }
                 
-                c_frame.escrever(lista_cons_area, df.format(acum));
+                if(entra1==false){
+                        Long lastT=map.lastKey();
+                        for(long t:map.keySet()){            
+                            if(t==lastT){
+                                lista_final=map.get(t);
+                                //System.out.println("Tempo_Final: "+ t);
+                            }
+                        }
+                }
+                
+                
+                double acumInicial=0;
+                for(int i:lista_inicial.keySet()){
+                      acumInicial=acumInicial+lista_inicial.get(i);
+                      
+                      
+                }
+                //System.out.println("Inicial: "+ df.format(acumInicial));
+
+                
+                double acumFinal=0;
+                for(int i:lista_final.keySet()){
+                     acumFinal=acumFinal+lista_final.get(i);
+                }
+                //System.out.println("Final: "+ df.format(acumFinal));
+                
+                boolean encontrei=false;
+                String desig="";
+                for(Integer i:lista_final.keySet()){
+                    for(Integer ii:lista_area.keySet()){
+                        if((i==ii)&&(encontrei==false)){
+                            desig=lista_area.get(ii);
+                            encontrei=true;
+                        }
+                        
+                    }
+                    
+                    lista_cons_area.add(" Área "+i+" ("+desig+"): "+df.format(lista_final.get(i)-lista_inicial.get(i))+" kWh"+"\n\n");
+                    encontrei=false;
+                    desig="";
+                
+                }
+
+                double val=acumFinal-acumInicial;
+                //System.out.println("Valor: "+ df.format(val));
+                c_frame.escrever_edif(df.format(val));
+                c_frame.escrever(lista_cons_area);
+
+        } 
+               
+        
+        
+        public void mostrarCons(Consumos c_frame){
+            DecimalFormat df = new DecimalFormat("###,#####0.00000"); 
+            TreeMap<Long, TreeMap<Integer, Double>> map= mapa;    
+            TreeMap<Integer, Double> lista= new TreeMap<Integer, Double>();
+            
+            Long lastT=map.lastKey();
+            for(long t:map.keySet()){            
+                    if(t==lastT){
+                        lista=map.get(t);
+                        //System.out.println("Tempo_Final: "+ t);
+                    }
+            }
+            
+            double acum=0;
+            for(int i:lista.keySet()){
+                     acum=acum+lista.get(i);
+            }
+            
+            c_frame.escrever_anual(df.format(acum));
+                
             
         }
         
