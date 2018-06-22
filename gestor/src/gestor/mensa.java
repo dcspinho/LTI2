@@ -1,16 +1,11 @@
 package gestor;
 
 import java.awt.Color;
-import java.awt.Point;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import static java.lang.Thread.sleep;
-import java.net.Socket;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.TreeMap;
@@ -403,6 +398,7 @@ public class mensa extends javax.swing.JFrame {
     }//GEN-LAST:event_ConsumosActionPerformed
 
     private void configActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configActionPerformed
+
         Config cc = new Config(a,c);
         cc.setSize(450, 300);
         cc.setTitle("Configurações");
@@ -412,6 +408,10 @@ public class mensa extends javax.swing.JFrame {
         
         //c.alterar_desig_area(1, "lixo");
         //c.atualizar(con);
+
+        //c.add_area("eliminar");
+        //c.add_concentrador(11);
+        
     }//GEN-LAST:event_configActionPerformed
 
 
