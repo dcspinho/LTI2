@@ -2,7 +2,6 @@ package central;
 
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
@@ -96,6 +95,8 @@ public class infor_edi extends javax.swing.JFrame {
         prec = new javax.swing.JTextField();
         prec_txt = new javax.swing.JLabel();
         refr = new javax.swing.JLabel();
+        cons_anual_txt = new javax.swing.JLabel();
+        cons_anual = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabela_mes = new javax.swing.JTable();
         Botao_AlterarPreco = new javax.swing.JButton();
@@ -142,6 +143,25 @@ public class infor_edi extends javax.swing.JFrame {
         jPanel1.add(refr);
         refr.setBounds(400, 30, 50, 50);
 
+        cons_anual_txt.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cons_anual_txt.setForeground(new java.awt.Color(255, 255, 255));
+        cons_anual_txt.setText("Consumo anual (kWh)");
+        cons_anual_txt.setToolTipText("");
+        jPanel1.add(cons_anual_txt);
+        cons_anual_txt.setBounds(50, 80, 140, 30);
+
+        cons_anual.setEditable(false);
+        cons_anual.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        cons_anual.setCaretColor(new java.awt.Color(204, 204, 204));
+        cons_anual.setSelectionColor(new java.awt.Color(0, 0, 0));
+        cons_anual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cons_anualActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cons_anual);
+        cons_anual.setBounds(200, 80, 70, 30);
+
         tabela_mes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -153,7 +173,7 @@ public class infor_edi extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabela_mes);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 100, 350, 190);
+        jScrollPane1.setBounds(20, 120, 350, 190);
 
         Botao_AlterarPreco.setBackground(new java.awt.Color(204, 204, 204));
         Botao_AlterarPreco.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -231,12 +251,16 @@ public class infor_edi extends javax.swing.JFrame {
 
     }//GEN-LAST:event_refrMouseReleased
 
+    private void cons_anualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_anualActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cons_anualActionPerformed
+
     public void Imprimir_Output() throws SQLException, ParseException {
         DataBase t = new DataBase();
         String s = edificio;
         Output.setText(null);
         DecimalFormat df = new DecimalFormat("###,#####0.00000");
-       
+        DecimalFormat df_custo = new DecimalFormat("###,##0.00");
         DefaultTableModel val= (DefaultTableModel) tabela_mes.getModel();
         val.setRowCount(0);
         prec.setText("");
@@ -255,6 +279,7 @@ public class infor_edi extends javax.swing.JFrame {
                 ResultSet resultset = t.output_cliente(con, s);
 
                 
+                double total=0;
                 int mes=0;
                 Calendar calendar = Calendar.getInstance();
 		double val_ini=0;
@@ -264,21 +289,29 @@ public class infor_edi extends javax.swing.JFrame {
                 //System.out.println(resultset);
                 while (resultset.next()){
                     calendar.setTime(resultset.getDate("timestamp_date"));
+                    
                     if(inicio==false){
                         mes=calendar.get(GregorianCalendar.MONTH); 
                         inicio=true;
                         val_ini=resultset.getDouble("valor");
-                        //System.out.println("Valor inicialll: "+val_ini);
+                        //System.out.println("\n\nValor inicial: "+df.format(val_ini));
+                        //System.out.println("Mes inicial: "+mes);
                     }                   
-                   
-                    if(mes<calendar.get(GregorianCalendar.MONTH)){
-                        inicio=true;
+                    else if(mes<calendar.get(GregorianCalendar.MONTH)){
+                        
+                       // System.out.println("Valor final: "+df.format(val_fin));
                         valll=val_fin-val_ini;
+                        
                         //adicionar na tabela
-                        val.addRow(new String[] {getMES(mes),df.format(valll),Double.toString(preco*valll)});
+                        val.addRow(new String[] {getMES(mes),df.format(valll),df_custo.format(preco*valll)});
+                        
+                        //System.out.println("Valor final: "+df.format(val_fin));
+                        total=total+valll;
                         valll=0;
-                        //System.out.println("Valor final: "+val_fin);
+                        val_ini=resultset.getDouble("valor");
+                        mes=calendar.get(GregorianCalendar.MONTH);
                     }
+  
                     val_fin=resultset.getDouble("valor");
                     
                     //Output.append(Double.toString(resultset.getDouble("valor")) + "\t\t");
@@ -290,12 +323,15 @@ public class infor_edi extends javax.swing.JFrame {
                 }
                 
                 if(valll==0){
-                        //System.out.println("Valor inicial: "+val_ini);
-                        //System.out.println("Valor final: "+val_fin);
+
+                        //System.out.println("Valor final: "+df.format(val_fin));
                         valll=val_fin-val_ini;
-                        val.addRow(new String[] {getMES(mes),df.format(valll),Double.toString(preco*valll)});
+                        val.addRow(new String[] {getMES(mes),df.format(valll),df_custo.format(preco*valll)});
+                        total=total+valll;
                 }
  
+                cons_anual.setText(df.format(total));
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Edifício " + s + " sem dados.", "Sistema Central de Gestão", JOptionPane.PLAIN_MESSAGE);
                 //Output.append("Edifício " + s + " sem dados.");
@@ -308,6 +344,8 @@ public class infor_edi extends javax.swing.JFrame {
     private javax.swing.JButton Botao_AlterarPreco;
     public javax.swing.JTextArea Output;
     private javax.swing.JScrollPane ScrollOutput;
+    private javax.swing.JTextField cons_anual;
+    private javax.swing.JLabel cons_anual_txt;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

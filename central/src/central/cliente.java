@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -52,26 +54,62 @@ public class cliente extends javax.swing.JFrame {
         DecimalFormat df_custo = new DecimalFormat("###,##0.00");
         
         
-        double val=0;
-        double cust=0;
-        for(String s:lista){
-             
-             ResultSet resultset = t.output_cliente(con, s);
-             double prec=t.output_cliente_preco(con, s);
-             
-             double vall_temp=0;
-             while (resultset.next()){                  
-                    vall_temp=resultset.getDouble("valor");
-                    //System.out.println("val: "+vall_temp);
-             }
-             cust=cust+(vall_temp*prec);
-             val=val+vall_temp;
+        double TOTALISSIMO=0;
+        double PRECO=0;
 
-             //System.out.println("VALOR TOTAL: "+val);
+        for(String s:lista){
+                ResultSet resultset = t.output_cliente(con, s);
+                double preco = t.output_cliente_preco(con, s);
+                
+                double total=0;
+                double cust=0;
+                int mes=0;
+                Calendar calendar = Calendar.getInstance();
+		double val_ini=0;
+                double val_fin=0;
+                double valll=0;
+                boolean inicio=false;
+                while (resultset.next()){
+                    calendar.setTime(resultset.getDate("timestamp_date"));
+                    
+                    if(inicio==false){
+                        mes=calendar.get(GregorianCalendar.MONTH); 
+                        inicio=true;
+                        val_ini=resultset.getDouble("valor");
+                        //System.out.println("\n\nValor inicial: "+df.format(val_ini));
+                        //System.out.println("Mes inicial: "+mes);
+                    }                   
+                    else if(mes<calendar.get(GregorianCalendar.MONTH)){
+                        
+                       // System.out.println("Valor final: "+df.format(val_fin));
+                        valll=val_fin-val_ini;
+                        
+                        //System.out.println("Valor final: "+df.format(val_fin));
+                        total=total+valll;
+                        valll=0;
+                        val_ini=resultset.getDouble("valor");
+                        mes=calendar.get(GregorianCalendar.MONTH);
+                    }
+  
+                    val_fin=resultset.getDouble("valor");
+
+                }
+                
+                if(valll==0){
+
+                        //System.out.println("Valor final: "+df.format(val_fin));
+                        valll=val_fin-val_ini;
+                        total=total+valll;
+                }
+ 
+                TOTALISSIMO=TOTALISSIMO+total;  
+                PRECO=PRECO+(preco*total);
+             
         }
         
-        cons_total.setText(df.format(val)+ " kWh");
-        custo_tot.setText(df_custo.format(cust)+ " €");
+
+        cons_total.setText(df.format(TOTALISSIMO)+ " kWh");
+        custo_tot.setText(df_custo.format(PRECO)+ " €");
 
     }
     
