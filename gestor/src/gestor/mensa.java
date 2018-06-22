@@ -398,8 +398,9 @@ public class mensa extends javax.swing.JFrame {
     }//GEN-LAST:event_ConsumosActionPerformed
 
     private void configActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configActionPerformed
-        c.add_area("eliminar");
-        c.add_concentrador(11);
+
+        //c.add_area("eliminar");
+        //c.add_concentrador(11);
         /*try {
             //m.setLocationRelativeTo(null);
             //c.alterar_desig_area(1, "lixo");
