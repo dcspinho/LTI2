@@ -1212,7 +1212,7 @@ public class EnviarDados implements Runnable
                             for (byte b : datanovo) {
                                 System.out.println(Integer.toBinaryString(b & 255 | 256).substring(1));
                             }*/
-                            System.out.println("\n ------> Data recebida do real");
+                            //System.out.println("\n ------> Data recebida do real");
                             
                             if(adicionaCom==true){
                                 byte[] codd;
