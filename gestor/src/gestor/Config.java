@@ -97,6 +97,20 @@ public class Config extends javax.swing.JFrame{
         
         return false;
         
+    }
+    
+    
+    
+    public boolean existeArea(String area){
+        HashMap<Integer, String> lista_area=conex.area_designacao;
+        
+        for(Integer i:lista_area.keySet()){
+            if(lista_area.get(i).equals(area)){
+                    return true;
+            }
+        }
+        return false;
+        
     
     }
     
@@ -224,35 +238,71 @@ public class Config extends javax.swing.JFrame{
 
     private void area_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_area_addActionPerformed
 
+            sens_list.removeAllItems();
+        
             String novo = JOptionPane.showInputDialog(rootPane, "Nova área:", "Adicionar área " , -1);
             
             if (novo != null) {
-                /*if (novo.equals("") == false) {
+                
+                if (novo.equals("") == false) {
                     
-                    //ver se nao existe e adicionar
-                    if () {
-                        JOptionPane.showMessageDialog(null, "Área adicionada com sucesso!", "Adicionar área", JOptionPane.PLAIN_MESSAGE);
-                       
-                        //atualizar a lista na interface
-                        HashMap<Integer, String> lista_area=conex.area_designacao;
-                        sens_area.removeAllItems();
-                        for(Integer i: lista_area.keySet()){         
-                            areas_list.addItem(lista_area.get(i));
+                        //ver se nao existe 
+                        if (existeArea(novo)==false) {
+                            
+                            //adicionar 
+                            
+                            
+                            
+                            //atualizar a lista na interface
+                            lista_area();
+                            
+                            
+                            JOptionPane.showMessageDialog(null, "Área adicionada com sucesso!", "Adicionar área", JOptionPane.PLAIN_MESSAGE);
+                            
+                            
+                            
+                            //**************nao esquecer de atualizar na base de dados
+                
                         }
-                        
-                         //nao esquecer de atualizar na base de dados
+                        else{
+                            JOptionPane.showMessageDialog(null, "Área existente!", "Adicionar área", JOptionPane.ERROR_MESSAGE);
+                        }    
+                            
                 
-                
-                    } else {    //nao foi adicionado
+                    }
+                else {    //nao foi adicionado
                         JOptionPane.showMessageDialog(null, "Impossível adicionar área!", "Adicionar área", JOptionPane.ERROR_MESSAGE);
                     }
-                }*/
+                
             }
 
     }//GEN-LAST:event_area_addActionPerformed
 
     private void area_remActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_area_remActionPerformed
-        // TODO add your handling code here:
+        sens_list.removeAllItems();
+        
+        String rem_area= (String) areas_list.getSelectedItem();
+        
+        int resp = JOptionPane.showConfirmDialog(null, "Tem a certeza que pretende remover: " + rem_area + " ?", "Remover área", WIDTH);
+        
+        if (resp == 0) {
+                
+               /* if (//vamos remover) {
+                    JOptionPane.showMessageDialog(null, "Área removida com sucesso!", "Remover área", JOptionPane.PLAIN_MESSAGE);
+                    
+                    
+                    
+                    //**************nao esquecer de atualizar na base de dados
+                    
+                    //atualizar lista
+                    lista_area()
+                    
+                } else {
+                    JOptionPane.showMessageDialog(null, "Impossível remover área!", "Remover área", JOptionPane.ERROR_MESSAGE);
+                }*/
+
+               
+        }
     }//GEN-LAST:event_area_remActionPerformed
 
     private void sens_listActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sens_listActionPerformed
@@ -310,7 +360,41 @@ public class Config extends javax.swing.JFrame{
     }//GEN-LAST:event_sensor_addActionPerformed
 
     private void sens_remActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sens_remActionPerformed
-        // TODO add your handling code here:
+       
+               
+        String rem_sens= (String) sens_list.getSelectedItem();
+        
+        if (rem_sens != null) {
+            
+            int resp = JOptionPane.showConfirmDialog(null, "Tem a certeza que pretende remover o " + rem_sens + " ?", "Remover sensor", WIDTH);
+            
+            
+            rem_sens=rem_sens.substring(7);
+            int cod_sensor=Integer.parseInt(rem_sens); 
+           
+            //System.out.println("Sensor a remover:"+cod_sensor);
+            
+                        
+            if (resp == 0) {
+                   /* if (//vamos remover) {
+                        JOptionPane.showMessageDialog(null, "Sensor removido com sucesso!", "Remover sensor", JOptionPane.PLAIN_MESSAGE);
+
+
+
+                        //**************nao esquecer de atualizar na base de dados
+
+                        //atualizar lista
+                        lista_sens()
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Impossível remover sensor!", "Remover sensor", JOptionPane.ERROR_MESSAGE);
+                    }*/
+
+
+            }
+        
+        }
+        
     }//GEN-LAST:event_sens_remActionPerformed
 
    
