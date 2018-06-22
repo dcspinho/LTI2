@@ -1,26 +1,26 @@
-
 package gestor;
 
-
 import java.awt.Color;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
+public class Config extends javax.swing.JFrame {
 
-
-
-public class Config extends javax.swing.JFrame{
-    
     arranque a;
     ArrayList<concentrador> lista_conc;
     ConexaoMySQL conex;
-    String area_selecionada="";
-    
-    public Config(arranque aa, ConexaoMySQL c) {
-        
-        conex=c;
-        a=aa;
+    String area_selecionada = "";
+    Connection con;
+
+    public Config(arranque aa, ConexaoMySQL c, Connection cc) {
+        con = cc;
+        conex = c;
+        a = aa;
         initComponents();
         areas_bot.setEnabled(false);
         areas_bot.setForeground(Color.BLACK);
@@ -28,94 +28,83 @@ public class Config extends javax.swing.JFrame{
         sens_bot.setForeground(Color.BLACK);
         lista_area();
     }
-    
 
-    public void lista_area(){
+    public void lista_area() {
         areas_list.removeAllItems();
-        
-        HashMap<Integer, String> lista_area=conex.area_designacao;
-        
-        for(Integer i: lista_area.keySet()){         
+
+        HashMap<Integer, String> lista_area = conex.area_designacao;
+
+        for (Integer i : lista_area.keySet()) {
             areas_list.addItem(lista_area.get(i));
         }
         sens_list.removeAllItems();
     }
-    
 
-    public boolean Inteiro( String s ) {
+    public boolean Inteiro(String s) {
         // cria um array de char
         char[] c = s.toCharArray();
         boolean d = true;
-        for ( int i = 0; i < c.length; i++ ){
+        for (int i = 0; i < c.length; i++) {
             // verifica se o char não é um dígito
-            if ( !Character.isDigit( c[ i ] ) ) {
+            if (!Character.isDigit(c[i])) {
                 d = false;
                 break;
             }
         }
         return d;
     }
-    
-    
-    
-    public void lista_sens(){
-            sens_list.removeAllItems();
-        
-            area_selecionada= (String) areas_list.getSelectedItem();
-            
-            int cod=0;
-            
-            HashMap<Integer, String> lista_area=conex.area_designacao;
-            for (Integer i:lista_area.keySet()){
-                if(lista_area.get(i).equals(area_selecionada)){
-                    cod=i;
-                }
+
+    public void lista_sens() {
+        sens_list.removeAllItems();
+
+        area_selecionada = (String) areas_list.getSelectedItem();
+
+        int cod = 0;
+
+        HashMap<Integer, String> lista_area = conex.area_designacao;
+        for (Integer i : lista_area.keySet()) {
+            if (lista_area.get(i).equals(area_selecionada)) {
+                cod = i;
             }
-            
-            ArrayList<Integer> lista_sens=conex.sensores(cod);
-            
-            for(int i: lista_sens){
-                //System.out.println("sensor: "+i);
-                sens_list.addItem("Sensor "+i);
-            }
+        }
+
+        ArrayList<Integer> lista_sens = conex.sensores(cod);
+
+        for (int i : lista_sens) {
+            //System.out.println("sensor: "+i);
+            sens_list.addItem("Sensor " + i);
+        }
     }
-    
-    
-    
-    public boolean existeSensor(int num_sen){
-        HashMap<Integer, String> lista_area=conex.area_designacao;
-        
-        for(Integer i:lista_area.keySet()){
-            ArrayList<Integer> lista_sens=conex.sensores(i);
-            for(int ii:lista_sens){
-                if(ii==num_sen){
+
+    public boolean existeSensor(int num_sen) {
+        HashMap<Integer, String> lista_area = conex.area_designacao;
+
+        for (Integer i : lista_area.keySet()) {
+            ArrayList<Integer> lista_sens = conex.sensores(i);
+            for (int ii : lista_sens) {
+                if (ii == num_sen) {
                     return true;
                 }
             }
-        
+
         }
-        
+
         return false;
-        
+
     }
-    
-    
-    
-    public boolean existeArea(String area){
-        HashMap<Integer, String> lista_area=conex.area_designacao;
-        
-        for(Integer i:lista_area.keySet()){
-            if(lista_area.get(i).equals(area)){
-                    return true;
+
+    public boolean existeArea(String area) {
+        HashMap<Integer, String> lista_area = conex.area_designacao;
+
+        for (Integer i : lista_area.keySet()) {
+            if (lista_area.get(i).equals(area)) {
+                return true;
             }
         }
         return false;
-        
-    
+
     }
-    
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -227,178 +216,163 @@ public class Config extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void areas_listActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_areas_listActionPerformed
-            
-  
+        String s = (String) areas_list.getSelectedItem();
+
     }//GEN-LAST:event_areas_listActionPerformed
 
     private void consActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consActionPerformed
-            lista_sens();
- 
+        lista_sens();
+
     }//GEN-LAST:event_consActionPerformed
 
     private void area_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_area_addActionPerformed
 
-            sens_list.removeAllItems();
-        
-            String novo = JOptionPane.showInputDialog(rootPane, "Nova área:", "Adicionar área " , -1);
-            
-            if (novo != null) {
-                
-                if (novo.equals("") == false) {
-                    
-                        //ver se nao existe 
-                        if (existeArea(novo)==false) {
-                            
-                            //adicionar 
-                            
-                            
-                            
-                            //atualizar a lista na interface
-                            lista_area();
-                            
-                            
-                            JOptionPane.showMessageDialog(null, "Área adicionada com sucesso!", "Adicionar área", JOptionPane.PLAIN_MESSAGE);
-                            
-                            
-                            
-                            //**************nao esquecer de atualizar na base de dados
-                
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(null, "Área existente!", "Adicionar área", JOptionPane.ERROR_MESSAGE);
-                        }    
-                            
-                
+        sens_list.removeAllItems();
+
+        String novo = JOptionPane.showInputDialog(rootPane, "Nova área:", "Adicionar área ", -1);
+
+        if (novo != null) {
+
+            if (novo.equals("") == false) {
+
+                //ver se nao existe 
+                if (existeArea(novo) == false) {
+
+                    try {
+                        conex.add_area(novo);
+                        conex.TUDO_area_designacao();
+                        conex.atualizar(con);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Config.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                else {    //nao foi adicionado
-                        JOptionPane.showMessageDialog(null, "Impossível adicionar área!", "Adicionar área", JOptionPane.ERROR_MESSAGE);
-                    }
-                
+                    //adicionar 
+                    //atualizar a lista na interface
+                    lista_area();
+
+                    JOptionPane.showMessageDialog(null, "Área adicionada com sucesso!", "Adicionar área", JOptionPane.PLAIN_MESSAGE);
+
+                    //**************nao esquecer de atualizar na base de dados
+                } else {
+                    JOptionPane.showMessageDialog(null, "Área existente!", "Adicionar área", JOptionPane.ERROR_MESSAGE);
+                }
+
+            } else {    //nao foi adicionado
+                JOptionPane.showMessageDialog(null, "Impossível adicionar área!", "Adicionar área", JOptionPane.ERROR_MESSAGE);
             }
+
+        }
 
     }//GEN-LAST:event_area_addActionPerformed
 
     private void area_remActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_area_remActionPerformed
         sens_list.removeAllItems();
-        
-        String rem_area= (String) areas_list.getSelectedItem();
-        
-        int resp = JOptionPane.showConfirmDialog(null, "Tem a certeza que pretende remover: " + rem_area + " ?", "Remover área", WIDTH);
-        
-        if (resp == 0) {
-                
-               /* if (//vamos remover) {
-                    JOptionPane.showMessageDialog(null, "Área removida com sucesso!", "Remover área", JOptionPane.PLAIN_MESSAGE);
-                    
-                    
-                    
-                    //**************nao esquecer de atualizar na base de dados
-                    
-                    //atualizar lista
-                    lista_area()
-                    
-                } else {
-                    JOptionPane.showMessageDialog(null, "Impossível remover área!", "Remover área", JOptionPane.ERROR_MESSAGE);
-                }*/
 
-               
+        String rem_area = (String) areas_list.getSelectedItem();
+
+        int resp = JOptionPane.showConfirmDialog(null, "Tem a certeza que pretende remover: " + rem_area + " ?", "Remover área", WIDTH);
+
+        if (resp == 0) {
+
+            if (conex.remover_area(rem_area)) {
+                JOptionPane.showMessageDialog(null, "Área removida com sucesso!", "Remover área", JOptionPane.PLAIN_MESSAGE);
+
+                try {
+                    //**************nao esquecer de atualizar na base de dados
+
+                    //atualizar lista
+                    conex.atualizar(con);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Config.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                lista_area();
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Impossível remover área!", "Remover área", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_area_remActionPerformed
 
     private void sens_listActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sens_listActionPerformed
-        // TODO add your handling code here:
+        String s = (String) sens_list.getSelectedItem();
     }//GEN-LAST:event_sens_listActionPerformed
 
     private void sensor_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sensor_addActionPerformed
-                    
-        
-            if(area_selecionada.equals("")==false){
-                String novo = JOptionPane.showInputDialog(rootPane, "Número do sensor:", "Adicionar sensor: "+area_selecionada  , -1);
-            
-                if (Inteiro(novo)) {
 
-                    //ver se nao existe e adicionar
-                    if (existeSensor(Integer.parseInt(novo))==false) {
+        if (area_selecionada.equals("") == false) {
+            String novo = JOptionPane.showInputDialog(rootPane, "Número do sensor:", "Adicionar sensor: " + area_selecionada, -1);
 
-                            int cod=0;
-                            HashMap<Integer, String> lista_area=conex.area_designacao;
-                            for (Integer i:lista_area.keySet()){
-                                if(lista_area.get(i).equals(area_selecionada)){
-                                    cod=i;
-                                }
-                            }
-                            
-                            conex.adicionar_areaCsensores(cod,Integer.parseInt(novo));
-                            JOptionPane.showMessageDialog(null, "Sensor "+Integer.parseInt(novo)+" adiciondo com sucesso!", "Adicionar sensor: "+area_selecionada, JOptionPane.PLAIN_MESSAGE);
-                            
-                            lista_sens();
-                            
-                            
-          
-                            
-                            //**************nao esquecer de atualizar na base de dados
-                        
-                            
-  
-                        
+            if (Inteiro(novo)) {
+
+                //ver se nao existe e adicionar
+                if (existeSensor(Integer.parseInt(novo)) == false) {
+
+                    int cod = 0;
+                    HashMap<Integer, String> lista_area = conex.area_designacao;
+                    for (Integer i : lista_area.keySet()) {
+                        if (lista_area.get(i).equals(area_selecionada)) {
+                            cod = i;
+                        }
                     }
-                    else{
-                        JOptionPane.showMessageDialog(null, "Sensor existente!", "Adicionar sensor: "+area_selecionada, JOptionPane.ERROR_MESSAGE);
+
+                    conex.adicionar_areaCsensores(cod, Integer.parseInt(novo));
+
+                    lista_sens();
+                    try {
+                        conex.atualizar(con);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Config.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                   
-                } else {    //nao foi adicionado
-                     JOptionPane.showMessageDialog(null, "Número de sensor inválido!", "Adicionar sensor: "+area_selecionada, JOptionPane.ERROR_MESSAGE);   
+                    JOptionPane.showMessageDialog(null, "Sensor " + Integer.parseInt(novo) + " adiciondo com sucesso!", "Adicionar sensor: " + area_selecionada, JOptionPane.PLAIN_MESSAGE);
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Sensor existente!", "Adicionar sensor: " + area_selecionada, JOptionPane.ERROR_MESSAGE);
                 }
 
+            } else {    //nao foi adicionado
+                JOptionPane.showMessageDialog(null, "Número de sensor inválido!", "Adicionar sensor: " + area_selecionada, JOptionPane.ERROR_MESSAGE);
             }
-            else{
-                JOptionPane.showMessageDialog(null, "Selecione a área!", "Configurações", JOptionPane.ERROR_MESSAGE);   
-            }
-                
-           
-        
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecione a área!", "Configurações", JOptionPane.ERROR_MESSAGE);
+        }
+
+
     }//GEN-LAST:event_sensor_addActionPerformed
 
     private void sens_remActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sens_remActionPerformed
-       
-               
-        String rem_sens= (String) sens_list.getSelectedItem();
-        
+
+        String rem_sens = (String) sens_list.getSelectedItem();
+
         if (rem_sens != null) {
-            
+
             int resp = JOptionPane.showConfirmDialog(null, "Tem a certeza que pretende remover o " + rem_sens + " ?", "Remover sensor", WIDTH);
-            
-            
-            rem_sens=rem_sens.substring(7);
-            int cod_sensor=Integer.parseInt(rem_sens); 
-           
+
+            rem_sens = rem_sens.substring(7);
+            int cod_sensor = Integer.parseInt(rem_sens);
+
             //System.out.println("Sensor a remover:"+cod_sensor);
-            
-                        
             if (resp == 0) {
-                   /* if (//vamos remover) {
-                        JOptionPane.showMessageDialog(null, "Sensor removido com sucesso!", "Remover sensor", JOptionPane.PLAIN_MESSAGE);
+                int cod_area = conex.area(cod_sensor);
+                if (conex.remover_sensor(cod_area, cod_sensor)) {
 
+                    try {
+                        conex.atualizar(con);
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Config.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    lista_sens();
+                    JOptionPane.showMessageDialog(null, "Sensor removido com sucesso!", "Remover sensor", JOptionPane.PLAIN_MESSAGE);
 
-
-                        //**************nao esquecer de atualizar na base de dados
-
-                        //atualizar lista
-                        lista_sens()
-
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Impossível remover sensor!", "Remover sensor", JOptionPane.ERROR_MESSAGE);
-                    }*/
-
+                } else {
+                    JOptionPane.showMessageDialog(null, "Impossível remover sensor!", "Remover sensor", JOptionPane.ERROR_MESSAGE);
+                }
 
             }
-        
+
         }
-        
+
     }//GEN-LAST:event_sens_remActionPerformed
 
-   
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton area_add;
@@ -413,11 +387,4 @@ public class Config extends javax.swing.JFrame{
     private javax.swing.JButton sensor_add;
     // End of variables declaration//GEN-END:variables
 
-   
-  
 }
-
-    
-
-
-

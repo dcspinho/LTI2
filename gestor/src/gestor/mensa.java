@@ -399,7 +399,7 @@ public class mensa extends javax.swing.JFrame {
 
     private void configActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configActionPerformed
 
-        Config cc = new Config(a,c);
+        Config cc = new Config(a,c,con);
         cc.setSize(450, 300);
         cc.setTitle("Configurações");
         cc.setLocationRelativeTo(null);
