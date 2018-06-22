@@ -833,3 +833,514 @@ Arranque:
 2018-06-21 22:08:44.864
 [COM:0 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
 Paragem na Comunicação: stop enviado
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 11:24:12.361
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 11:24:28.893
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 11:24:54.198
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:2222 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 11:27:42.153
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 11:33:14.111
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 11:33:24.238
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 11:34:22.185
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 11:34:59.003
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 11:37:13.503
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 11:38:43.665
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:13710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:16710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:19710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:22710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:25710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:28710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:31710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:34710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:37710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:40710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:43710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:46710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:49710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:52710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:55710 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:58710 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 11:39:50.940
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:13110 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:16110 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 11:51:18.326
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:7449 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:10449 ; PM:3000 ; PA:200 ; NS:200]
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:13856 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:00:50.099
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:26554 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:29554 ; PM:3000 ; PA:200 ; NS:200]
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:31929 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:01:50.198
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:02:29.286
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:14686 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:17686 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:20686 ; PM:3000 ; PA:200 ; NS:200]
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:25139 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:28139 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:07:58.742
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:4469 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:7469 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:10:26.638
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:10:53.138
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:11:25.877
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:12:03.292
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:12:35.795
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Paragem na Comunicação: stop enviado
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:13:56.993
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:5892 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:8892 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:11892 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:14892 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:17892 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:20892 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:23892 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:22:19.453
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:4887 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:7887 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:10887 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:13887 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:16887 ; PM:3000 ; PA:200 ; NS:200]
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:22:41.943
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:19887 ; PM:3000 ; PA:16718849 ; NS:27]
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:2628 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:5628 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:8628 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:11628 ; PM:3000 ; PA:200 ; NS:200]
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:15232 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:23:02.145
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:24:07.023
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:9570 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:12570 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:15570 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:18570 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:21570 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:24:50.839
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:11021 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:14021 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:27:48.068
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:5298 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:8298 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:29:07.942
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:29:46.978
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:30:10.232
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:5561 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:8561 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:11561 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:14561 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:17561 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:20561 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:31:18.398
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:36:09.510
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+Paragem na Comunicação: stop enviado
+Paragem na Comunicação: stop enviado
+
+Inicio da Comunicação com sensores:
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:5494 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:8494 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:11494 ; PM:3000 ; PA:200 ; NS:200]
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:36:47.327
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:37:02.543
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:2350 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:5350 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:8350 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:11350 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:14350 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:17350 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:20350 ; PM:3000 ; PA:200 ; NS:200]
+---------------------INICIO---------------------
+Arranque:
+2018-06-22 12:37:48.728
+[COM:3 , Baud-rate:57600 , PA:200 microssegundos , PM:3000 milissegundos , NS:200 , PORTA_SOCKETS_SENSOR:0 , IP_GESTOR:127.0.0.1 , PORTA_SOCKETS_GESTOR7778 , PORTA_SOCKETS_CON61000]
+Sensor real conectado!
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:1949 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:4949 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:7949 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:10949 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:13949 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:16949 ; PM:3000 ; PA:200 ; NS:200]
+
+DATA: [Tipo:10 ; End.Ard:4 ; TS:19949 ; PM:3000 ; PA:200 ; NS:200]
+Final da Comunicação: stop enviado
+Programa finalizado.
+-----------------------FIM----------------------
+

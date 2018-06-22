@@ -591,7 +591,7 @@ public class comm{
             }catch(Exception e){
                 g.atualiza("Erro: Falha na conexão da porta COM!");
                 IDPortaOK=false;
-
+                
             }
     }
     
@@ -617,7 +617,7 @@ public class comm{
 
                         existeCOM=1;
                         g.atualiza("Sensor real conectado!");
-                        //System.out.println("Sensor real conectado!");
+                        System.out.println("Sensor real conectado!");
                     }
             }
         
@@ -643,6 +643,9 @@ public class comm{
             //habilita e inicia escrita       ************
             esc=(new Thread(new EnviarDados(saida, g)));
             esc.start();
+
+ 
+            
         }
         
         else{
@@ -650,7 +653,7 @@ public class comm{
             System.exit(0);
         }
         
-        System.out.println("\n\n START: preessione ENTER \n STOP: preessione ENTER \n\n END: preessione 0 + ENTER\n");
+        System.out.println("\n START: preessione ENTER \n STOP: preessione ENTER \n\n END: preessione 0 + ENTER\n");
                 
     }
     
@@ -778,6 +781,25 @@ public class EnviarDados implements Runnable
                             socket.start();
                             
                     }
+                    
+                    if(existeCOM==1){
+                        
+                        Thread.sleep(1500);
+                        
+                        //mandar START
+                        nBytes=0;
+                        obj=sta.constTrama();
+                        byte b= (byte)obj[13];
+                        ns= unsignedByteToInt(b);
+
+                        this.outt.write(obj);
+                        saida.flush();
+                        
+                        ler=(new Thread(new LerDados(entrada,g)));
+                        ler.start();
+                        
+                     }
+                    
                    
                     c = 0;
                     while ((( c = System.in.read(acabar)) > -1 )&&(finito==false))
@@ -823,7 +845,6 @@ public class EnviarDados implements Runnable
                                 
                                 ler=(new Thread(new LerDados(entrada,g)));
                                 ler.start();
-                                
                             }
                             
                             ArrayList<byte[]> list_c=acede_listadeCodigos(false, null);
@@ -972,7 +993,9 @@ public class EnviarDados implements Runnable
                 catch ( IOException e )
                 {
                     System.out.print("Erro a escrever!\n\n"); 
-                } 
+                } catch (InterruptedException ex) { 
+        Logger.getLogger(comm.class.getName()).log(Level.SEVERE, null, ex);
+    } 
                 
             }
     
@@ -1025,7 +1048,7 @@ public class EnviarDados implements Runnable
                
                 try {    
                     g.atualiza("Sensor simulado conectado!");
-                    //System.out.println("socketsThread: Sensor simulado conectado!");
+                    System.out.println("Sensor simulado conectado!");
                     
                     
                 } catch (IOException ex){
@@ -1101,7 +1124,7 @@ public class EnviarDados implements Runnable
                                     
                     System.arraycopy(tramaGeral, 0, trama, 0, ns*2+17);
 
-                    //System.out.println("\n iniciaProcData: -----------------------> Data recebida do simulado");
+                    //System.out.println("\n -----------------------> Data recebida do simulado");
                      
                     byte[] cod_ard = new byte[2]; 
                     int j=0;
@@ -1163,7 +1186,9 @@ public class EnviarDados implements Runnable
             {   
                     
                 while (( len = this.in.read(buffer)) > -1 ){
-                                   
+                       
+                    //System.out.println("Entrou: "+len);
+                    
                     buffernovo=new byte[len];
                     System.arraycopy(buffer,0, buffernovo, 0, len);
                     
@@ -1187,7 +1212,7 @@ public class EnviarDados implements Runnable
                             for (byte b : datanovo) {
                                 System.out.println(Integer.toBinaryString(b & 255 | 256).substring(1));
                             }*/
-                            //System.out.println("\n ------> Data recebida do real");
+                            System.out.println("\n ------> Data recebida do real");
                             
                             if(adicionaCom==true){
                                 byte[] codd;
