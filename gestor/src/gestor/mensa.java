@@ -405,6 +405,7 @@ public class mensa extends javax.swing.JFrame {
     private void configActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configActionPerformed
         try {
             //m.setLocationRelativeTo(null);
+            //c.alterar_desig_area(1, "lixo");
             c.atualizar(con);
         } catch (SQLException ex) {
             Logger.getLogger(mensa.class.getName()).log(Level.SEVERE, null, ex);
