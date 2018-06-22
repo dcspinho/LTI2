@@ -36,6 +36,7 @@ public class ConexaoMySQL {
         }        
         return true;
     }
+    
     /*CORRETO*/
     public void adicionar_areaCsensores(int cod_area, int cod_s) {
         ArrayList<Integer> novo = new ArrayList();
