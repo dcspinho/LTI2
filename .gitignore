@@ -11,3 +11,4 @@ gestor/nbproject/private/private.properties
 sensor/nbproject/private/private.properties
 *.properties
 /central/build/
+/gestor/dist/

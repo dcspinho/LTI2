@@ -24,6 +24,18 @@ public class ConexaoMySQL {
     /*codigo do concentrador e a sua lista de sensores*/
     HashMap<Integer, ArrayList<Integer>> concentrador_sensores = new HashMap<Integer, ArrayList<Integer>>();
 
+    public boolean alterar_desig_area(int cod_area, String designacao){
+        int tamanho=designacao.length();
+        if(tamanho>20){
+            return false;
+        }
+        for(Integer i:area_designacao.keySet()){
+            if(i==cod_area){
+                area_designacao.put(cod_area, designacao);
+            }
+        }        
+        return true;
+    }
     /*CORRETO*/
     public void adicionar_areaCsensores(int cod_area, int cod_s) {
         ArrayList<Integer> novo = new ArrayList();
@@ -181,7 +193,7 @@ public class ConexaoMySQL {
 
         Statement statement = null;
         statement = connection.createStatement();
-
+        
         statement.executeUpdate("drop table if exists sensor");
         statement.executeUpdate("drop table if exists concentrador");
         statement.executeUpdate("drop table if exists area");
@@ -190,7 +202,6 @@ public class ConexaoMySQL {
 
         for (Integer i : area_designacao.keySet()) {
             statement.executeUpdate("insert into area values(" + i + ",'" + area_designacao.get(i) + "')");
-            //System.out.println(i + " : " + area_designacao.get(i));
         }
         TUDO_area_designacao();
 
@@ -198,36 +209,51 @@ public class ConexaoMySQL {
 
         for (Integer i : concentrador_porta.keySet()) {
             statement.executeUpdate("insert into Concentrador values(" + i + "," + concentrador_porta.get(i) + ")");
-            //System.out.println(i + " : " + concentrador_porta.get(i));
         }
         TUDO_concentrador_porta();
 
         statement.executeUpdate("create table Sensor(cod_sensor int check(cod_sensor>=0),cod_area int not null check(cod_area>=0),cod_concentrador int,primary key(cod_sensor),foreign key(cod_area) references Area(cod_area) on update cascade on delete cascade,foreign key(cod_concentrador)references Concentrador(cod_concentrador)on update cascade on delete cascade)engine=innodb;");
-
+         
         System.out.println(area_sensores);
         System.out.println(concentrador_sensores);
-        
+
         /*percorrer a area
         ver cada sensor e respetivo concentrador
         adicionar
-        */
-        
-        for(Integer area:area_sensores.keySet()){
-            ArrayList<Integer> sensores_a=new ArrayList<Integer>();
-            
-            sensores_a=area_sensores.get(area);
-            
-            for(Integer sensor_a:sensores_a){
-                for(Integer concentrador:concentrador_sensores.keySet()){
-                    ArrayList<Integer> sensores_c=new ArrayList<Integer>();
-                    for(Integer sensor_c:sensores_c){
-                        if(sensor_c==sensor_a){
+         */
+        for (Integer area : area_sensores.keySet()) {
+            //System.out.println("\n");
+            ArrayList<Integer> sensores_a = new ArrayList<Integer>();
+
+            sensores_a = area_sensores.get(area);
+            //System.out.println("area : " + area);
+            //System.out.println("sensores : " + sensores_a);
+
+            for (Integer sensor_a : sensores_a) {
+                int encontrou=0;
+                //System.out.println("\tsensor " + sensor_a);
+                for (Integer concentrador : concentrador_sensores.keySet()) {
+                    //System.out.println("\t\tconcentrador " + concentrador);
+                    ArrayList<Integer> sensores_c = new ArrayList<Integer>();
+                    sensores_c = concentrador_sensores.get(concentrador);
+                    for (Integer sensor_c : sensores_c) {
+                        //System.out.println("\t\tsensor " + sensor_c);
+                        if (sensor_c == sensor_a) {
+                            //System.out.println("Inserir " + sensor_c + " , " + area + " , " + concentrador);
                             statement.executeUpdate("insert into Sensor values(" + sensor_c + "," + area + "," + concentrador +")");
+                            encontrou=1;
                         }
                     }
                 }
+                if(encontrou==0){
+                    //System.out.println("Inserir " + sensor_a + " , " + area + " , null");
+                    statement.executeUpdate("insert into Sensor values(" + sensor_a + "," + area + ",null)");
+                }
             }
         }
+
+        System.out.println("---->FIM");
+
     }
 
     public java.sql.Connection getConexaoMySQL() throws SQLException {
