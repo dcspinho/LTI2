@@ -207,32 +207,26 @@ public class ConexaoMySQL {
         System.out.println(area_sensores);
         System.out.println(concentrador_sensores);
         
-        for (Integer i : concentrador_sensores.keySet()) {
-            /*seleciono o cod_concentrador*/
-            ArrayList<Integer> sensores_conc = new ArrayList<Integer>();
-            ArrayList<Integer> sensores_area = new ArrayList<Integer>();
-
-            sensores_conc = concentrador_sensores.get(i);
-
-            for (Integer a : area_sensores.keySet()) {
-                /*cod_area*/
-                sensores_area = area_sensores.get(a);
-                /*array cod_sensor*/
-
-                for (Integer conc : sensores_conc) {
-                    /*cod_sensor*/
-                    for (Integer area : sensores_conc) {/*cod_sensor*/
-                        if (conc == area) {
-                            statement.executeUpdate("insert into sensor values(" + conc + "," + a + "," + i + ")");
-                            System.out.println(conc + " , "+a+","+i);
+        /*percorrer a area
+        ver cada sensor e respetivo concentrador
+        adicionar
+        */
+        
+        for(Integer area:area_sensores.keySet()){
+            ArrayList<Integer> sensores_a=new ArrayList<Integer>();
+            
+            sensores_a=area_sensores.get(area);
+            
+            for(Integer sensor_a:sensores_a){
+                for(Integer concentrador:concentrador_sensores.keySet()){
+                    ArrayList<Integer> sensores_c=new ArrayList<Integer>();
+                    for(Integer sensor_c:sensores_c){
+                        if(sensor_c==sensor_a){
+                            statement.executeUpdate("insert into Sensor values(" + sensor_c + "," + area + "," + concentrador +")");
                         }
-
                     }
-
                 }
-
             }
-
         }
     }
 

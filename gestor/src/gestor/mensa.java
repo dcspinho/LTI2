@@ -32,7 +32,7 @@ public class mensa extends javax.swing.JFrame {
     static comEd ed;
     static mensa m;
     DefaultTableModel val;
-    Thread atualizaBD;
+    //Thread atualizaBD;
     Connection con;
 
     public mensa() throws SQLException {
@@ -40,14 +40,14 @@ public class mensa extends javax.swing.JFrame {
         anual.setEnabled(false);
         anual.setForeground(Color.BLACK);
         c = new ConexaoMySQL();
-        con=c.getConexaoMySQL();
-        atualizaBD = new Thread(new atualiza(con));
-        atualizaBD.start();
+        con = c.getConexaoMySQL();
+        //atualizaBD = new Thread(new atualiza(con));
+        //atualizaBD.start();
         val = (DefaultTableModel) tabela.getModel();
         val.setRowCount(0);
     }
 
-    class atualiza implements Runnable {
+    /*class atualiza implements Runnable {
 
         Connection con;
         
@@ -71,8 +71,7 @@ public class mensa extends javax.swing.JFrame {
             }
 
         }
-    }
-
+    }*/
     public static void main(String args[]) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -404,8 +403,12 @@ public class mensa extends javax.swing.JFrame {
     }//GEN-LAST:event_ConsumosActionPerformed
 
     private void configActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configActionPerformed
-        //m.setLocationRelativeTo(null);
-
+        try {
+            //m.setLocationRelativeTo(null);
+            c.atualizar(con);
+        } catch (SQLException ex) {
+            Logger.getLogger(mensa.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_configActionPerformed
 
 
