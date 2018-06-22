@@ -198,7 +198,7 @@ public class ConexaoMySQL {
         statement.executeUpdate("drop table if exists concentrador");
         statement.executeUpdate("drop table if exists area");
 
-        statement.executeUpdate("create table Area(cod_area int check(cod_area>=0), designacao varchar(20) not null,primary key (cod_area),unique (designacao))engine=innodb;");
+        statement.executeUpdate("create table Area(cod_area int check(cod_area>=0), designacao varchar(20) not null,primary key (cod_area))engine=innodb;");
 
         for (Integer i : area_designacao.keySet()) {
             statement.executeUpdate("insert into area values(" + i + ",'" + area_designacao.get(i) + "')");
@@ -256,6 +256,36 @@ public class ConexaoMySQL {
 
     }
 
+    
+    public int add_area(String designacao){
+        /*verificar se já existe*/
+        if(designacao==null){
+            return 1;
+        }
+        int ultimo=0;
+        for(Integer area:area_designacao.keySet()){
+            ultimo=area;
+            System.out.println("ultimo : "+ultimo);
+        }
+        
+       area_designacao.put(ultimo+1, designacao);
+       return 0;
+    }
+    
+    public void add_concentrador(int nr_porta){
+        int ultimo=0;
+        for(Integer concentrador:concentrador_porta.keySet()){
+            ultimo=concentrador;
+            System.out.println("ultimo : "+ultimo);
+        }
+        
+        concentrador_porta.put(ultimo+1, nr_porta);
+    }
+    
+    public void add_sensor(){
+        
+    }
+    
     public java.sql.Connection getConexaoMySQL() throws SQLException {
 
         Connection connection = null;
@@ -264,18 +294,11 @@ public class ConexaoMySQL {
         System.out.println("----->CONEXÃO ESTABELECIDA");
 
         try {
-            /* Carregando o JDBC Driver padrão*/
             String driverName = "com.mysql.jdbc.Driver";
-            //System.out.println("Encontrou a driver?");
             Class.forName(driverName);
-            //System.out.println("IUPIIII. ENCONTROU");
             String BD = "faseb";
 
-            /* Conexão com um banco de dados*/
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/" + BD, "root", null);
-            //System.out.println("\t\t*****connection : "+connection);
-
-            /*Testar a conexão*/
             if (connection != null) {
                 status = ("STATUS--->Conectado com sucesso!");
 
@@ -283,34 +306,17 @@ public class ConexaoMySQL {
                 status = ("STATUS--->Não foi possivel realizar conexão");
             }
 
-            /*Criar statement*/
             statement = connection.createStatement();
-            //System.out.println("\t\t*****statement : "+statement);
-
-            /*Executar SQL query*/
             resultset = statement.executeQuery("select *from area");
-            //System.out.println("\t\t*****resultset : "+resultset);
-
-            //System.out.println("\nArea, Designacao");
-            /*Processar o resultado*/
             while (resultset.next()) {
                 adicionar_area_designacao(resultset.getInt("cod_area"), resultset.getString("designacao"));
-                //System.out.println(resultset.getInt("cod_Area")+"\t"+resultset.getString("designacao"));
             }
-
-            /*System.out.println("Area 2 : "+designacao(2));
-                System.out.println("Area 1 : "+designacao(1));
-                System.out.println("Area 3 : "+designacao(3));
-                System.out.println("Area 4 : "+designacao(4));                
-                TUDO_area_designacao();*/
-            //System.out.println("\nArea, Sensor, Concentrador");
+            
+            
             resultset = statement.executeQuery("select *from sensor");
             while (resultset.next()) {
-                //System.out.print(resultset.getInt("cod_area")+"\t"+resultset.getInt("cod_sensor"));
                 if (resultset.getInt("cod_concentrador") == 0) {
-                    //System.out.println("\tnull");
                 } else {
-                    //System.out.println("\t"+resultset.getInt("cod_concentrador"));
                 }
                 adicionar_areaCsensores(resultset.getInt("cod_area"), resultset.getInt("cod_sensor"));
                 //AINDA NAO SE USA NESTA FASE
@@ -342,20 +348,8 @@ public class ConexaoMySQL {
             //System.out.println("\nConcentrador, Porta");
             resultset = statement.executeQuery("select *from concentrador");
             while (resultset.next()) {
-                //System.out.println(resultset.getInt("cod_concentrador")+"\t      "+resultset.getInt("nr_porta"));
                 adicionar_concentradorPorta(resultset.getInt("cod_concentrador"), resultset.getInt("nr_porta"));
             }
-            /*System.out.println("Porta 61000 é concentrador : "+concentrador(61000));
-                System.out.println("Porta 61001 é concentrador : "+concentrador(61001));
-                System.out.println("Porta 61002 é concentrador : "+concentrador(61002));
-                System.out.println("Porta 61003 é concentrador : "+concentrador(61003));
-                System.out.println("Porta 61004 é concentrador : "+concentrador(61004));*/
-
-            //TUDO_concentrador_porta();
-            /*System.out.println(area_designacao);
-                System.out.println(area_sensores);
-                System.out.println(concentrador_porta);
-                System.out.println(concentrador_sensores);*/
             return connection;
 
         } catch (ClassNotFoundException e) {

@@ -1,0 +1,28 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    font-size: 120%;
+    background: #FFFFFF; /*Cor de fundo*/
+}
+
+form, .content {
+    width: 30%;
+    margin: 0px auto;
+    padding: 20px;
+    border: none;
+    background: white;
+    border-radius: 5px 5px 5px 5px;
+}
+.btn{
+    padding: 6px;
+    font-size: 15px;
+    color: white;
+    background: #B22222;
+    border: none;
+    border-radius: 5px;
+}
+.logout{
+    style: left;
+}
