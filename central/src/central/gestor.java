@@ -220,11 +220,13 @@ public class gestor extends javax.swing.JFrame {
 
                 
                 cli = new cliente(lista, con, user);
-                cli.setSize(445, 350);
+                cli.setSize(445, 250);
                 cli.setTitle("Sistema Central de Gestão: " + nome.getText());
                 cli.setLocationRelativeTo(null);
                 cli.setVisible(true);
             } catch (SQLException ex) {
+                Logger.getLogger(gestor.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ParseException ex) {
                 Logger.getLogger(gestor.class.getName()).log(Level.SEVERE, null, ex);
             }
 

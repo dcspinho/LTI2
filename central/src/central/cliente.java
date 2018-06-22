@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -12,7 +13,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
-import javax.swing.table.DefaultTableModel;
 
 public class cliente extends javax.swing.JFrame {
 
@@ -20,7 +20,7 @@ public class cliente extends javax.swing.JFrame {
     Connection con = null;
     String user;
 
-    public cliente(ArrayList<String> list, Connection c, String u) throws SQLException {
+    public cliente(ArrayList<String> list, Connection c, String u) throws SQLException, ParseException {
         initComponents();
         con = c;
         user = u;
@@ -37,11 +37,45 @@ public class cliente extends javax.swing.JFrame {
 
         DataBase t = new DataBase();
         if (t.ver_Tipo_user(con, user) == 2) {
-            Botao_AlterarPreco.setVisible(false);
             logout.setVisible(false);
         }
+        
+        iniciar(lista);
+    
+    }
+    
+    public void iniciar(ArrayList<String> list) throws SQLException, ParseException{
+        
+        ArrayList<String> lista=list;
+        DataBase t = new DataBase();
+        DecimalFormat df = new DecimalFormat("###,#####0.00000");
+        DecimalFormat df_custo = new DecimalFormat("###,##0.00");
+        
+        
+        double val=0;
+        double cust=0;
+        for(String s:lista){
+             
+             ResultSet resultset = t.output_cliente(con, s);
+             double prec=t.output_cliente_preco(con, s);
+             
+             double vall_temp=0;
+             while (resultset.next()){                  
+                    vall_temp=resultset.getDouble("valor");
+                    //System.out.println("val: "+vall_temp);
+             }
+             cust=cust+(vall_temp*prec);
+             val=val+vall_temp;
+
+             //System.out.println("VALOR TOTAL: "+val);
+        }
+        
+        cons_total.setText(df.format(val)+ " kWh");
+        custo_tot.setText(df_custo.format(cust)+ " €");
 
     }
+    
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -53,11 +87,12 @@ public class cliente extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         lista_Edif = new javax.swing.JComboBox<>();
         Botao_Consultar = new javax.swing.JButton();
-        prec = new javax.swing.JTextField();
-        prec_txt = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabela = new javax.swing.JTable();
-        Botao_AlterarPreco = new javax.swing.JButton();
+        consumo_label = new javax.swing.JLabel();
+        consumo_label1 = new javax.swing.JLabel();
+        cons_total = new javax.swing.JTextField();
+        Botao_refres = new javax.swing.JButton();
+        cust_label = new javax.swing.JLabel();
+        custo_tot = new javax.swing.JTextField();
         logout = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -78,7 +113,7 @@ public class cliente extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lista_Edif);
-        lista_Edif.setBounds(230, 50, 130, 30);
+        lista_Edif.setBounds(140, 130, 170, 30);
 
         Botao_Consultar.setBackground(new java.awt.Color(204, 204, 204));
         Botao_Consultar.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -86,68 +121,95 @@ public class cliente extends javax.swing.JFrame {
         Botao_Consultar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Botao_Consultar.setPreferredSize(new java.awt.Dimension(45, 35));
         Botao_Consultar.setRequestFocusEnabled(false);
+        Botao_Consultar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Botao_ConsultarMouseClicked(evt);
+            }
+        });
         Botao_Consultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Botao_ConsultarActionPerformed(evt);
             }
         });
         Botao_Consultar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Botao_ConsultarKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Botao_ConsultarKeyReleased(evt);
             }
         });
         jPanel1.add(Botao_Consultar);
-        Botao_Consultar.setBounds(370, 45, 40, 40);
+        Botao_Consultar.setBounds(360, 125, 40, 40);
 
-        prec.setEditable(false);
-        prec.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        prec.setCaretColor(new java.awt.Color(204, 204, 204));
-        prec.setSelectionColor(new java.awt.Color(0, 0, 0));
-        prec.addActionListener(new java.awt.event.ActionListener() {
+        consumo_label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        consumo_label.setForeground(new java.awt.Color(255, 255, 255));
+        consumo_label.setText("Todos os edifícios");
+        jPanel1.add(consumo_label);
+        consumo_label.setBounds(10, 70, 120, 30);
+
+        consumo_label1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        consumo_label1.setForeground(new java.awt.Color(255, 255, 255));
+        consumo_label1.setText("Consumo anual");
+        jPanel1.add(consumo_label1);
+        consumo_label1.setBounds(130, 40, 120, 30);
+
+        cons_total.setEditable(false);
+        cons_total.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        cons_total.setCaretColor(new java.awt.Color(204, 204, 204));
+        cons_total.setSelectionColor(new java.awt.Color(0, 0, 0));
+        cons_total.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                precActionPerformed(evt);
+                cons_totalActionPerformed(evt);
             }
         });
-        jPanel1.add(prec);
-        prec.setBounds(60, 50, 60, 30);
+        jPanel1.add(cons_total);
+        cons_total.setBounds(120, 70, 110, 30);
 
-        prec_txt.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        prec_txt.setForeground(new java.awt.Color(255, 255, 255));
-        prec_txt.setText("Preço");
-        prec_txt.setToolTipText("");
-        jPanel1.add(prec_txt);
-        prec_txt.setBounds(20, 50, 40, 30);
-
-        tabela.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Consumo (kWh)", "Dia", "Hora"
-            }
-        ));
-        jScrollPane1.setViewportView(tabela);
-
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 90, 390, 200);
-
-        Botao_AlterarPreco.setBackground(new java.awt.Color(204, 204, 204));
-        Botao_AlterarPreco.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
-        Botao_AlterarPreco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/eur.png"))); // NOI18N
-        Botao_AlterarPreco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Botao_AlterarPreco.setLabel("");
-        Botao_AlterarPreco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botao_AlterarPrecoActionPerformed(evt);
+        Botao_refres.setBackground(new java.awt.Color(204, 204, 204));
+        Botao_refres.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
+        Botao_refres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/refres.png"))); // NOI18N
+        Botao_refres.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Botao_refres.setPreferredSize(new java.awt.Dimension(45, 35));
+        Botao_refres.setRequestFocusEnabled(false);
+        Botao_refres.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Botao_refresMouseClicked(evt);
             }
         });
-        Botao_AlterarPreco.addKeyListener(new java.awt.event.KeyAdapter() {
+        Botao_refres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Botao_refresActionPerformed(evt);
+            }
+        });
+        Botao_refres.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                Botao_refresKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                Botao_AlterarPrecoKeyReleased(evt);
+                Botao_refresKeyReleased(evt);
             }
         });
-        jPanel1.add(Botao_AlterarPreco);
-        Botao_AlterarPreco.setBounds(130, 45, 40, 40);
+        jPanel1.add(Botao_refres);
+        Botao_refres.setBounds(360, 65, 40, 40);
+
+        cust_label.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        cust_label.setForeground(new java.awt.Color(255, 255, 255));
+        cust_label.setText("Custo anual");
+        jPanel1.add(cust_label);
+        cust_label.setBounds(255, 40, 80, 30);
+
+        custo_tot.setEditable(false);
+        custo_tot.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        custo_tot.setCaretColor(new java.awt.Color(204, 204, 204));
+        custo_tot.setSelectionColor(new java.awt.Color(0, 0, 0));
+        custo_tot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                custo_totActionPerformed(evt);
+            }
+        });
+        jPanel1.add(custo_tot);
+        custo_tot.setBounds(250, 70, 80, 30);
 
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/logout.png"))); // NOI18N
         logout.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -156,7 +218,7 @@ public class cliente extends javax.swing.JFrame {
             }
         });
         jPanel1.add(logout);
-        logout.setBounds(20, 0, 50, 50);
+        logout.setBounds(20, 10, 50, 50);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/wallp.jpg"))); // NOI18N
@@ -167,10 +229,10 @@ public class cliente extends javax.swing.JFrame {
         jLabel3.setPreferredSize(new java.awt.Dimension(400, 300));
         jLabel3.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(0, 0, 660, 390);
+        jLabel3.setBounds(0, -20, 660, 300);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 476, 347);
+        jPanel1.setBounds(0, 0, 476, 250);
 
         pack();
         setLocationRelativeTo(null);
@@ -180,35 +242,6 @@ public class cliente extends javax.swing.JFrame {
         String s = (String) lista_Edif.getSelectedItem();
 
     }//GEN-LAST:event_lista_EdifActionPerformed
-
-    private void Botao_AlterarPrecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_AlterarPrecoActionPerformed
-        try {
-            DataBase t = new DataBase();
-            double preco = 0;
-            String novo = JOptionPane.showInputDialog(rootPane, "Alterar o preço :", "Novo preço", -1);
-            
-            if (novo != null) {
-                if (novo.equals("") == false) {
-                    novo=novo.replaceAll(",", ".");
-                    preco = Double.parseDouble(novo);
-                    if (t.alterar_preco(con, user, (String) lista_Edif.getSelectedItem(), preco)) {
-                        JOptionPane.showMessageDialog(null, "Preço alterado com sucesso!", "Sistema Central de Gestão", JOptionPane.PLAIN_MESSAGE);
-                        Imprimir_Output();
-                    } else {
-                        JOptionPane.showMessageDialog(null, "Impossível alterar o preço!", "Sistema Central de Gestão", JOptionPane.ERROR_MESSAGE);
-                    }
-                }
-            }
-
-        } catch (SQLException | ParseException ex) {
-            Logger.getLogger(cliente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_Botao_AlterarPrecoActionPerformed
-
-    private void Botao_AlterarPrecoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Botao_AlterarPrecoKeyReleased
-
-
-    }//GEN-LAST:event_Botao_AlterarPrecoKeyReleased
 
     private void logoutMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseReleased
         int resp = JOptionPane.showConfirmDialog(null, "Tem a certeza que pretende terminar sessão?", "Sistema Central de Gestão", WIDTH);
@@ -230,84 +263,86 @@ public class cliente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_logoutMouseReleased
 
-    private void precActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_precActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_precActionPerformed
-
     private void Botao_ConsultarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Botao_ConsultarKeyReleased
-        /*if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            try {
-                Imprimir_Output();
-            } catch (SQLException | ParseException ex) {
-                Logger.getLogger(cliente.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }*/
+ 
+        
     }//GEN-LAST:event_Botao_ConsultarKeyReleased
 
     private void Botao_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_ConsultarActionPerformed
-
+        infor_edi ini;
         try {
-            Imprimir_Output();
-
-        } catch (SQLException | ParseException ex) {
+            ini = new infor_edi(con,user,(String) lista_Edif.getSelectedItem());
+            ini.setSize(400, 370);
+            ini.setTitle("Edifício: "+(String) lista_Edif.getSelectedItem());
+            ini.setLocationRelativeTo(null);
+            ini.Imprimir_Output();
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(cliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
             Logger.getLogger(cliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Botao_ConsultarActionPerformed
 
-    public void Imprimir_Output() throws SQLException, ParseException {
-        DataBase t = new DataBase();
-        String s = (String) lista_Edif.getSelectedItem();
-        Output.setText(null);
+    private void Botao_ConsultarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Botao_ConsultarKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Botao_ConsultarKeyPressed
+
+    private void Botao_ConsultarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_ConsultarMouseClicked
         
-       
-        DefaultTableModel val= (DefaultTableModel) tabela.getModel();
-        val.setRowCount(0);
-        prec.setText("");
 
+    }//GEN-LAST:event_Botao_ConsultarMouseClicked
 
+    private void cons_totalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cons_totalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cons_totalActionPerformed
+
+    private void custo_totActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_custo_totActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_custo_totActionPerformed
+
+    private void Botao_refresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Botao_refresMouseClicked
         
-        if (s != null) {
-            double preco = t.output_cliente_preco(con, s);
-            if (preco != 0) {
-               // Output.append("Edificio : " + s);
-               
-                //Output.append("\nPreço : " + preco);
-                prec.setText(String.valueOf(preco)+ " €");
-                //Output.append("\nConsumo (kWh) : \tDia:\t Hora:\n");
-                ResultSet resultset = t.output_cliente(con, s);
+    }//GEN-LAST:event_Botao_refresMouseClicked
 
-                //System.out.println(resultset);
-                while (resultset.next()){
-                    //Output.append(Double.toString(resultset.getDouble("valor")) + "\t\t");
-                    //System.out.println(Double.toString(resultset.getDouble("valor")));
-                    //Output.append(String.valueOf(resultset.getDate("timestamp_date")) + "\t");
-                    //Output.append(String.valueOf(resultset.getTime("timestamp_time")) + "\n");
-                    val.addRow(new String[] {Double.toString(resultset.getDouble("valor")),String.valueOf(resultset.getDate("timestamp_date")),String.valueOf(resultset.getTime("timestamp_time"))});
-                    
-                    
-                    
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Edifício " + s + " sem dados.", "Sistema Central de Gestão", JOptionPane.PLAIN_MESSAGE);
-                //Output.append("Edifício " + s + " sem dados.");
-                                
-            }
+    private void Botao_refresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_refresActionPerformed
+        cons_total.setText("");
+        custo_tot.setText("");
+        
+        try {
+            iniciar(lista);
+        } catch (SQLException ex) {
+            Logger.getLogger(cliente.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(cliente.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }//GEN-LAST:event_Botao_refresActionPerformed
 
-    }
+    private void Botao_refresKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Botao_refresKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Botao_refresKeyPressed
+
+    private void Botao_refresKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Botao_refresKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Botao_refresKeyReleased
+
+
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Botao_AlterarPreco;
     private javax.swing.JButton Botao_Consultar;
+    private javax.swing.JButton Botao_refres;
     public javax.swing.JTextArea Output;
     private javax.swing.JScrollPane ScrollOutput;
+    private javax.swing.JTextField cons_total;
+    private javax.swing.JLabel consumo_label;
+    private javax.swing.JLabel consumo_label1;
+    private javax.swing.JLabel cust_label;
+    private javax.swing.JTextField custo_tot;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> lista_Edif;
     private javax.swing.JLabel logout;
-    private javax.swing.JTextField prec;
-    private javax.swing.JLabel prec_txt;
-    private javax.swing.JTable tabela;
     // End of variables declaration//GEN-END:variables
 
 }
