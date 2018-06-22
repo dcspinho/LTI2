@@ -404,6 +404,11 @@ public class mensa extends javax.swing.JFrame {
 
     private void configActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configActionPerformed
         try {
+            Config cc = new Config(a.lista_conc, a);
+            cc.setSize(350, 270);
+            cc.setTitle("Configurações");
+            cc.setLocationRelativeTo(null);
+            
             //m.setLocationRelativeTo(null);
             c.atualizar(con);
         } catch (SQLException ex) {
