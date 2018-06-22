@@ -403,14 +403,15 @@ public class mensa extends javax.swing.JFrame {
     }//GEN-LAST:event_ConsumosActionPerformed
 
     private void configActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configActionPerformed
-        try {
-            
-            //m.setLocationRelativeTo(null);
-            //c.alterar_desig_area(1, "lixo");
-            c.atualizar(con);
-        } catch (SQLException ex) {
-            Logger.getLogger(mensa.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Config cc = new Config(a,c);
+        cc.setSize(450, 300);
+        cc.setTitle("Configurações");
+        cc.setLocationRelativeTo(null);
+        cc.setVisible(true);
+        
+        
+        //c.alterar_desig_area(1, "lixo");
+        //c.atualizar(con);
     }//GEN-LAST:event_configActionPerformed
 
 
