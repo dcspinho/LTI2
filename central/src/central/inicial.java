@@ -179,11 +179,13 @@ public class inicial extends javax.swing.JFrame {
             Login();
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(inicial.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParseException ex) {
+            Logger.getLogger(inicial.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_IniciarActionPerformed
 
-    public void Login() throws ClassNotFoundException, SQLException {
+    public void Login() throws ClassNotFoundException, SQLException, ParseException {
         String user = this.Utilizador.getText();
         String pass = this.pass.getText();
         DataBase t = new DataBase();
@@ -218,7 +220,7 @@ public class inicial extends javax.swing.JFrame {
 
                                 m = new cliente(lista, con, user);
                                 setVisible(false);
-                                m.setSize(445, 350);
+                                m.setSize(445, 250);
                                 m.setTitle("Sistema Central de Gestão: " + user);
                                 m.setLocationRelativeTo(null);
                                 m.setVisible(true);
@@ -292,6 +294,8 @@ public class inicial extends javax.swing.JFrame {
             try {
                 Login();
             } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(inicial.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ParseException ex) {
                 Logger.getLogger(inicial.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
