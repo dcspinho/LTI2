@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Andreia/Documents/GitHub/LTI2/gestor/src/gestor/Consumos.java</file>
-            <file>file:/C:/Users/Andreia/Documents/GitHub/LTI2/gestor/src/gestor/Config.java</file>
-            <file>file:/C:/Users/Andreia/Documents/GitHub/LTI2/gestor/src/gestor/SensoresAtivos.java</file>
-            <file>file:/C:/Users/Andreia/Documents/GitHub/LTI2/gestor/src/gestor/mensa.java</file>
-=======
-            <file>file:/C:/Users/Diana/Documents/GitHub/LTI2/gestor/src/gestor/mensa.java</file>
->>>>>>> fd276bcb896b2663d2fc508b6fbc9374c0d779c7
+            <file>file:/C:/Users/Andreia/Documents/GitHub/LTI2/gestor/src/gestor/st.java</file>
+            <file>file:/C:/Users/Andreia/Documents/GitHub/LTI2/gestor/src/gestor/estatist.java</file>
+            <file>file:/C:/Users/Andreia/Documents/GitHub/LTI2/gestor/src/gestor/sensor.java</file>
+            <file>file:/C:/Users/Andreia/Documents/GitHub/LTI2/gestor/src/gestor/arranque.java</file>
         </group>
     </open-files>
 </project-private>
