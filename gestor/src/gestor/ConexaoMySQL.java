@@ -258,10 +258,13 @@ public class ConexaoMySQL {
 
         /*area_sensores.remove(cod_area);
         area_designacao.remove(cod_area);*/
-        int area = 0;
+        //int area = 0;
         for (Integer a : area_designacao.keySet()) {
             if (area_designacao.get(a).equals(designacao)) {
-                area = a;
+                System.out.println("------->ENCONTROU "+designacao);
+                area_designacao.remove(a);
+                return true;
+                /*area = a;
                 for (Integer i : area_sensores.keySet()) {
                     if (i == area) {
                         area_sensores.remove(i);
@@ -272,7 +275,7 @@ public class ConexaoMySQL {
                             }
                         }
                     }
-                }
+                }*/
             }
         }
         return false;
@@ -286,10 +289,6 @@ public class ConexaoMySQL {
         }
 
         concentrador_porta.put(ultimo + 1, nr_porta);
-    }
-
-    public void add_sensor() {
-
     }
 
     public boolean remover_sensor(int cod_area, int cod_sensor) {
