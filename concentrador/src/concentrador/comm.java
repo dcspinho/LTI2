@@ -33,6 +33,7 @@ public class comm{
     boolean begin=false;
     
     boolean adicionaCom=true;
+    boolean beginn=true;
     int posicao;
     static ArrayList<String> nome_files;
     
@@ -643,9 +644,6 @@ public class comm{
             //habilita e inicia escrita       ************
             esc=(new Thread(new EnviarDados(saida, g)));
             esc.start();
-
- 
-            
         }
         
         else{
@@ -713,11 +711,9 @@ public class comm{
                     ArrayList<sensor> listaNovaSens=acede_listaSens(false, null);
                     ArrayList<byte[]> listaNovaCod=acede_listadeCodigos(false, null);
                     //System.out.println("Tamanho da lista de sens: "+listaNovaSens.size());
-                   // System.out.println("Tamanho da lista de cod: "+listaNovaCod.size());
-                    
+                    //System.out.println("Tamanho da lista de cod: "+listaNovaCod.size());
                     
                     //vamos remove lo das listas
-                    
                     int tamanho=listaNovaSens.size();
                     for(int i=0;i<tamanho;i++){
                         sensor s=listaNovaSens.get(i);
@@ -1135,14 +1131,24 @@ public class EnviarDados implements Runnable
                     
                     ArrayList<byte[]> list=acede_listadeCodigos(false, null);
                     int index=0;
-                    for(byte [] bb : list){
-                        if((bb[0]==cod_ard[0])&&(bb[1]==cod_ard[1])){
-                           index= list.indexOf(bb);
-                           //System.out.println("entrou: index="+index);
-                        }
-                    } 
-                    acede_listaSens(false, null).get(index).ativar();
                     
+                    
+                    
+                    
+                        for(byte [] bb : list){
+                            if((bb[0]==cod_ard[0])&&(bb[1]==cod_ard[1])){
+                               index= list.indexOf(bb);
+                               //System.out.println("entrou: index="+index);
+                            }
+                        } 
+                        
+                        if(adicionaCom==true){
+                            acede_listaSens(false, null).get(index-1).ativar();
+                        }
+                        else{
+                            acede_listaSens(false, null).get(index).ativar();
+                        }
+                   
                     
                     proc p= new proc(g, trama, trama.length, sta);
                     
@@ -1214,7 +1220,7 @@ public class EnviarDados implements Runnable
                             }*/
                             //System.out.println("\n ------> Data recebida do real");
                             
-                            if(adicionaCom==true){
+                            if((adicionaCom==true)&&(beginn==true)){
                                 byte[] codd;
                                 codd=new byte[2];
                                 codd[0]=datanovo[1];
@@ -1229,7 +1235,7 @@ public class EnviarDados implements Runnable
                                 
                             }
                             
-                            adicionaCom=false;
+                            beginn=false;
                             
                             proc p= new proc(g, datanovo, nBytes, sta);
                             
