@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -5,8 +6,8 @@ $erros = array();
 $username = "";
 $password = "";
 
-//$db = mysqli_connect('192.168.43.75:3306','Todos','','bd') or die("Impossivel conectar");
-$db = mysqli_connect('localhost','root','','bd') or die("Impossivel conectar"); 
+$db = mysqli_connect('192.168.43.16:3306','Todos','','bd') or die("Impossivel conectar");
+//$db = mysqli_connect('localhost','Todos','','bd') or die("Impossivel conectar"); 
 //echo"ECHO";
 
  if (isset($_POST['login'])){
@@ -75,4 +76,108 @@ if (isset($_POST['logO'])){
     header("location: web2.php");
 }
 
+/*if (isset($_POST['Alterar'])){
+ 
+  $novoPreco = $_POST['preco1'];
+  $update = "UPDATE edificio SET preco= '$novoPreco' WHERE cod_edificio='".$_POST["cod_edificio"]."'";
+  $up = mysqli_query($db, $update);
+}*/
+
+if (isset($_POST['Gerir'])) {
+    header("location: Admin_gerir.php");
+}
+
+if (isset($_POST['Add_user'])) {
+    header("location: Admin_adicionar.php");
+}
+if (isset($_POST['Eliminar_user'])) {
+    header("location: Admin_eliminar.php");
+}
+if (isset($_POST['Consultar'])) {
+    header("location: Admin_consultar.php");
+}
+
+if (isset($_POST['Anterior'])) {
+    header("location: Admin.php");
+}
+
+if (isset($_POST['ADICIONAR'])) {
+    $error = 0;
+
+    if (!isset($_POST['tipo_user'])) {
+        ?>
+        <script>alert("Selecionar tipo de utilizador!")</script>
+        <?php
+        $error = 1;
+    } else if ($_POST['Utilizador'] == "") {
+        ?>
+        <script>alert('Introduzir nome de utilizador válido!')</script>
+        <?php
+    }
+    $sql = "SELECT nome_utilizador FROM utilizador";
+    $result = mysqli_query($db, $sql);
+    $tipo = mysqli_fetch_assoc($result);
+
+    while ($row = $result->fetch_assoc()) {
+        if ($row["nome_utilizador"] == $_POST['Utilizador']) {
+            //echo "id: " . $row["nome_utilizador"] . "<br>";
+            ?>
+            <script>alert('Utilizador já existente!')</script>
+            <?php
+            $error = 1;
+        }
+    }
+
+    if ($_POST['Palavra-passe'] != $_POST['Confirmar']) {
+        ?>
+        <script>alert('Palavra-passe não corresponde!')</script>
+        <?php
+        $error = 1;
+    }
+    if ($error == 0) {
+        /* fazer query adicionar */
+        /*if ($_GET['tipo_user'] == "Cliente") {
+            $sql = "insert into Utilizador values (null, '" . $_POST['Utilizador'] . "', '" . $_POST['Confirmar'] . "', 1)";
+        } else if ($_GET['tipo_user'] == "Gestor") {*/
+            $sql = "insert into Utilizador values (null, '" . $_POST['Utilizador'] . "', '" . $_POST['Confirmar'] . "', 2)";
+        /*}*/
+
+        $result = mysqli_query($db, $sql);
+        if ($result) {
+            ?>
+            <script>alert('Adicionado com sucesso!')</script>
+            <?php
+        } else {
+            ?>
+            <script>alert('Erro '.mysqli_query($db, $sql).'!!')</script>
+            <?php
+        }
+    }
+}
+
+if (isset($_POST['ELIMINAR'])) {
+    if ($_POST['nome_utilizador']) {
+        ?><script>
+                    if (confirm('Tem certeza que deseja remover este utilizador?')) {
+        <?php
+        echo user_eliminar(null);
+        /* $sql = "SELECT nome_utilizador FROM utilizador";
+          $result = mysqli_query($db, $sql);
+          $tipo = mysqli_fetch_assoc($result);
+
+          while ($row = $result->fetch_assoc()) {
+          if ($row["nome_utilizador"] == $_POST['Utilizador']) {
+          //echo "id: " . $row["nome_utilizador"] . "<br>";
+          ?>
+          < script > alert('Utilizador já existente!')</script>
+          <?php
+          $error = 1;
+          }
+          } */
+        ?>
+            }
+        </script>
+        <?php
+    }
+}
 ?>

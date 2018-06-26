@@ -28,7 +28,7 @@ $bd = mysqli_connect('localhost','root','','bd') or die("Impossivel conectar");
  <?php  
 
 // echo $_POST["cod_edificio"];
-$bd = mysqli_connect('localhost','root','','bd') or die("Impossivel conectar"); 
+$bd = mysqli_connect('192.168.43.16:3306','Todos','','bd') or die("Impossivel conectar"); 
  $output = '';  
  if(isset($_POST["cod_edificio"]))  
  {  
@@ -52,9 +52,9 @@ $bd = mysqli_connect('localhost','root','','bd') or die("Impossivel conectar");
             </tr> 
 
          <?php   $output .= '   <td>'.$row["valor"].'</td>
-                          <td>'.$row["timestamp_date"].'</td>
-                          <td>'.$row["timestamp_time"].'</td>
-                        </tr>';        
+                                <td>'.$row["timestamp_date"].'</td>
+                                <td>'.$row["timestamp_time"].'</td>
+                              </tr>';        
       }
       while($row = mysqli_fetch_array($result))  
       {  

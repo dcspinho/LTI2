@@ -780,7 +780,7 @@ public class EnviarDados implements Runnable
                     
                     if(existeCOM==1){
                         
-                        Thread.sleep(1500);
+                        Thread.sleep(2000);
                         
                         //mandar START
                         nBytes=0;
@@ -1142,12 +1142,9 @@ public class EnviarDados implements Runnable
                             }
                         } 
                         
-                        if(adicionaCom==true){
-                            acede_listaSens(false, null).get(index-1).ativar();
-                        }
-                        else{
-                            acede_listaSens(false, null).get(index).ativar();
-                        }
+                        
+                        acede_listaSens(false, null).get(index).ativar();
+                        
                    
                     
                     proc p= new proc(g, trama, trama.length, sta);
@@ -1228,7 +1225,7 @@ public class EnviarDados implements Runnable
                                 ArrayList<byte[]> list_c=acede_listadeCodigos(false, null);
                                 list_c.add(codd);
                                 acede_listadeCodigos(true, list_c);
-                                
+                                //System.out.println("Entrou!!!!!!!!!!!");
                                 /*for (byte b : codd) {
                                     System.out.println(Integer.toBinaryString(b & 255 | 256).substring(1) + "  ______  " + unsignedByteToInt(b));    
                                 }*/

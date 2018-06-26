@@ -3,7 +3,7 @@
 
 <?php
 // $bd = mysqli_connect('192.168.43.75:3306','Todos','','bd') or die("Impossivel conectar"); 
-$bd = mysqli_connect('localhost','root','','bd') or die("Impossivel conectar"); 
+$bd = mysqli_connect('192.168.43.16:3306','Todos','','bd') or die("Impossivel conectar"); 
 function achaEdificios($bd){
     $output = '';
     $SelecEdif = "SELECT designacao,cod_edificio FROM edificio WHERE cod_utilizador='".$_SESSION['cod']."'";
@@ -90,7 +90,7 @@ tr:nth-child(even) {
     </div>-->
     <div class="row" id="show_valor">  
             <?//php echo Dados_Edif($bd);?>
-         
+    <div class="row" id="nada">      
     </div>  
    <br></br>
 
@@ -104,7 +104,8 @@ tr:nth-child(even) {
       $('#edificio').change(function(){  
            var cod_edificio = $(this).val();  
            $.ajax({  
-                url:"help2.php",  
+                url:"help2.php",    
+                //url:"ConsumoMensa.php", 
                 method:"POST",  
                 data:{cod_edificio:cod_edificio},  
                 success:function(data){  
@@ -130,6 +131,22 @@ tr:nth-child(even) {
       });  
  });  
  </script> 
+
+ <!-- <script>  
+ $(document).ready(function(){  
+      $('#edificio').change(function(){  
+           var cod_edificio = $(this).val();  
+           $.ajax({  
+                url:"server.php",  
+                method:"POST",  
+                data:{cod_edificio:cod_edificio},  
+                success:function(data){  
+                     $('#nada').html(data);  
+                }  
+           });  
+      });  
+ });  
+ </script> -->
 
  <script>
   function showPreco(){
